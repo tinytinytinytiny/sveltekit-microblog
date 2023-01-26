@@ -1,7 +1,7 @@
 import { connect } from '@planetscale/database';
 
 const config = {
-	url: process.env.DATABASE_URL || import.meta.env.VITE_DATABASE_URL
+	url: import.meta.env.VITE_DATABASE_URL
 };
 
 export const load = async () => {
