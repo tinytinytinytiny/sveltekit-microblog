@@ -16,7 +16,7 @@ export const load = async () => {
 };
 
 export const actions = {
-	blog: async ({ request }) => {
+	post: async ({ request }) => {
 		const data = await request.formData();
 		const post = data.get('post');
 
@@ -26,6 +26,16 @@ export const actions = {
 
 		const results = await conn.execute('INSERT INTO Post (text, slug) VALUES (?, ?)', [post, generateSlug()]);
 		console.log(results);
+
+		return { success: true };
+	},
+	delete: async ({ request }) => {
+		const data = await request.formData();
+		const id = data.get('id');
+
+		if (!id) return fail(400, { id, missing: true });
+
+		await conn.execute('DELETE FROM Post WHERE id = ?', [id]);
 
 		return { success: true };
 	}

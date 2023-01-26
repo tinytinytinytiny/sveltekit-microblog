@@ -1,36 +1,27 @@
 <script>
-	import snarkdown from 'snarkdown';
+	import Post from '$lib/components/Post.svelte';
 	export let data;
 
 	console.log(data);
 </script>
 
-<main>
-	<nav>
-		<a href="/posts">Back to blog</a>
-	</nav>
-	<article>
-		{@html data.text
-			.split(/(?:\r?\n){2,}/)
-			.map((l) =>
-				[' ', '\t', '#', '-', '*', '>'].some((char) => l.startsWith(char))
-					? snarkdown(l)
-					: `<p>${snarkdown(l)}</p>`
-			)
-			.join('\n')}
-	</article>
-</main>
+<nav>
+	<a href="/posts">Back to blog</a>
+</nav>
+<Post content={data.text} />
+<footer>
+	<form action={`/posts/${data.slug}/edit`}>
+		<button type="submit">Edit</button>
+	</form>
+	<form method="POST" action="/posts?/delete">
+		<input type="hidden" name="id" value={data.id} />
+		<button type="submit">Delete</button>
+	</form>
+</footer>
 
 <style>
-	:global(body) {
-		margin: 0;
-		padding: 0;
-		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-			'Open Sans', 'Helvetica Neue', sans-serif;
-	}
-	main {
-		max-width: 480px;
-		margin: auto;
-		margin-top: 3rem;
+	footer {
+		display: flex;
+		gap: 16px;
 	}
 </style>
