@@ -23,6 +23,7 @@
 	"type": "module",
 	"dependencies": {
 		"@planetscale/database": "^1.5.0",
+		"random-word-slugs": "^0.1.6",
 		"snarkdown": "^2.0.0"
 	}
 }

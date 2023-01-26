@@ -6,7 +6,7 @@ const config = {
 
 export const load = async ({ params }) => {
 	const conn = connect(config);
-	const post = await conn.execute(`SELECT * FROM Post WHERE slug="${params.slug}" LIMIT 1`);
+	const post = await conn.execute('SELECT * FROM Post WHERE slug=? LIMIT 1', [params.slug]);
 
 	return post.rows[0];
 };
