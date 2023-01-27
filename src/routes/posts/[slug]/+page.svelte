@@ -8,13 +8,13 @@
 	<a href="/posts">Back to blog</a>
 </nav>
 <section aria-label="Post">
-	<Post content={data.post.text} />
+	<Post content={data.text} />
 	<footer>
-		<form action={`/posts/${data.post.slug}/edit`}>
+		<form action={`/posts/${data.slug}/edit`}>
 			<button type="submit">Edit</button>
 		</form>
 		<form method="POST" action="/posts?/delete">
-			<input type="hidden" name="id" value={data.post.id} />
+			<input type="hidden" name="id" value={data.id} />
 			<button type="submit">Delete</button>
 		</form>
 	</footer>
@@ -22,12 +22,21 @@
 <section aria-label="Comments">
 	<h2 id="comments">Comments</h2>
 	<InputForm action="?/comment" placeholder="Write a comment">
-		<input type="hidden" name="parent-id" value={data.post.id} />
+		<input type="hidden" name="parent-id" value={data.id} />
 	</InputForm>
 	<!-- svelte-ignore a11y-no-redundant-roles -->
 	<ul class="posts" role="list">
 		{#each data.comments as comment}
-			<li><Post content={comment.text} /></li>
+			<li>
+				<Post content={comment.text} />
+				{#if comment.comments.length}
+					<ul class="posts" role="list">
+						{#each comment.comments as comment}
+							<li><Post content={comment.text} /></li>
+						{/each}
+					</ul>
+				{/if}
+			</li>
 		{/each}
 	</ul>
 </section>

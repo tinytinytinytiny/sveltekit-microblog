@@ -7,8 +7,20 @@ const conn = connect(config);
 
 export const load = async ({ params }) => {
 	const { rows } = await conn.execute('SELECT id, text, slug, createdAt FROM Post WHERE slug = ? LIMIT 1', [params.slug]);
-	const post = rows[0];
+	const post = await getComments(rows[0]);
+
+	return post;
+};
+
+async function getComments(post) {
+	if (!post?.id) return post;
+
 	const comments = await conn.execute('SELECT id, text, slug, createdAt FROM Post WHERE parentId = ? ORDER BY createdAt DESC', [post.id]);
 
-	return { post, comments: comments.rows };
-};
+	if (comments.rows.length) {
+		const childComments = await Promise.all(comments.rows.map(getComments));
+		return { ...post, comments: childComments };
+	}
+
+	return { ...post, comments: comments.rows };
+}

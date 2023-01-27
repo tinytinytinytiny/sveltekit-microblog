@@ -13,8 +13,7 @@ body {
 
 main {
 	max-width: 480px;
-	margin: auto;
-	margin-top: 3rem;
+	margin: 3rem auto;
 }
 
 img {
@@ -35,8 +34,13 @@ ul:where([class]) {
 	padding: 0;
 }
 
-.posts li {
-	border-bottom: 1px solid #f2f2f2;
-	margin-bottom: 2rem;
-	padding-bottom: 2rem;
+.posts .posts {
+	margin-left: 2em;
+}
+
+.posts li + li,
+.posts li > .posts {
+	border-top: 1px solid #dfdfdf;
+	margin-top: 2rem;
+	padding-top: 1rem;
 }
