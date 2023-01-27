@@ -6,36 +6,25 @@
 </script>
 
 <h1>My wonderful microblog</h1>
-<InputForm action="?/post" />
+<InputForm action="?/post" placeholder="Twitter.com" />
 <h2>Recent Posts</h2>
-<ul class="posts">
+
+<!-- svelte-ignore a11y-no-redundant-roles -->
+<ul class="posts" role="list">
 	{#each data.posts as post}
 		<li>
 			<Post content={post.text} />
 			<footer>
-				<a href={`/posts/${post.slug}/`}>Permalink</a>
+				<a href={`/posts/${post.slug}/`}>{Number(post.numComments)} Comments</a>
 			</footer>
 		</li>
 	{/each}
 </ul>
 
 <style>
-	ul {
-		padding: 0;
-	}
-
 	h1 {
 		margin-top: 4rem;
 		margin-bottom: 2rem;
-	}
-
-	.posts li {
-		list-style: none;
-		border-bottom: 1px solid #f2f2f2;
-		margin: 0;
-		padding: 0;
-		margin-bottom: 2rem;
-		padding-bottom: 2rem;
 	}
 
 	footer {

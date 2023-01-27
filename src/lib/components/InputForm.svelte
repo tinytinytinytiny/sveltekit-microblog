@@ -1,8 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
 	import TextBox from '$lib/components/TextBox.svelte';
+	import TextArea from '$lib/components/TextArea.svelte';
 
 	export let action = null;
+	export let placeholder;
 
 	let button;
 	let value = '';
@@ -15,14 +17,16 @@
 </script>
 
 <form method="POST" {action}>
-	<TextBox
-		id="post"
-		name="post"
-		label="Message"
-		placeholder="Twitter.com"
-		bind:value
-		on:input={handleInput}
-	>
-		<button slot="controls" type="submit" bind:this={button}>Post</button>
+	<slot />
+	<TextBox>
+		<TextArea
+			id="compose-post"
+			name="post"
+			label="Message"
+			{placeholder}
+			bind:value
+			on:input={handleInput}
+		/>
+		<button type="submit" bind:this={button}>Post</button>
 	</TextBox>
 </form>

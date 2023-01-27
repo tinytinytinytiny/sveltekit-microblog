@@ -8,7 +8,11 @@ const config = {
 const conn = connect(config);
 
 export const load = async () => {
-	const posts = await conn.execute('SELECT * FROM Post ORDER BY createdAt DESC');
+	const posts = await conn.transaction(async (tx) => {
+		await tx.execute('CREATE TEMPORARY TABLE parent_posts AS SELECT id, text, slug, createdAt FROM Post WHERE parentId IS NULL');
+		await tx.execute('CREATE TEMPORARY TABLE child_posts AS SELECT SUM(1) AS numComments, parentId AS id FROM Post WHERE parentId IS NOT NULL GROUP BY parentId');
+		return tx.execute('SELECT id, text, slug, createdAt, numComments FROM parent_posts LEFT JOIN child_posts USING (id) ORDER BY createdAt DESC');
+	});
 
 	return {
 		posts: posts.rows

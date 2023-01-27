@@ -1,4 +1,6 @@
+import { fail } from '@sveltejs/kit';
 import { connect } from '@planetscale/database';
+import { generateSlug } from 'random-word-slugs';
 
 const config = {
 	url: import.meta.env.VITE_DATABASE_URL
@@ -19,9 +21,23 @@ export const actions = {
 			return fail(400, { id, missing: true });
 		}
 
-		const results = await conn.execute('UPDATE Post SET text = ? WHERE id = ?', [post, id]);
-		console.log(results);
+		await conn.execute('UPDATE Post SET text = ? WHERE id = ?', [post, id]);
+		return { success: true };
+	},
+	comment: async ({ request }) => {
+		const data = await request.formData();
+		const post = data.get('post');
+		const parentId = data.get('parent-id');
 
+		if (!post || !post.replace(/\s/g, '')) {
+			return fail(400, { post, missing: true });
+		}
+
+		if (!parentId) {
+			return fail(400, { parentId, missing: true });
+		}
+
+		await conn.execute('INSERT INTO Post (text, slug, parentId) VALUES (?, ?, ?)', [post, generateSlug(), parentId]);
 		return { success: true };
 	}
 };

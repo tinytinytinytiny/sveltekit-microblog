@@ -21,3 +21,22 @@ img {
 	height: auto;
 	max-width: 100%;
 }
+
+[role="list"] li {
+	list-style: none;
+}
+
+ul:where([class]) {
+	padding: 0;
+}
+
+:where(ul[class], ol[class]) li {
+	margin: 0;
+	padding: 0;
+}
+
+.posts li {
+	border-bottom: 1px solid #f2f2f2;
+	margin-bottom: 2rem;
+	padding-bottom: 2rem;
+}
