@@ -21,7 +21,7 @@
 </section>
 <section aria-label="Comments">
 	<h2 id="comments">Comments</h2>
-	<InputForm action="?/comment" placeholder="Write a comment">
+	<InputForm action={`/posts/${data.slug}?/comment`} placeholder="Write a comment">
 		<input type="hidden" name="parent-id" value={data.id} />
 	</InputForm>
 	<!-- svelte-ignore a11y-no-redundant-roles -->

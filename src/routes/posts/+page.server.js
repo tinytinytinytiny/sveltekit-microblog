@@ -28,9 +28,7 @@ export const actions = {
 			return fail(400, { post, missing: true });
 		}
 
-		const results = await conn.execute('INSERT INTO Post (text, slug) VALUES (?, ?)', [post, generateSlug()]);
-		console.log(results);
-
+		await conn.execute('INSERT INTO Post (text, slug) VALUES (?, ?)', [post, generateSlug()]);
 		return { success: true };
 	},
 	delete: async ({ request }) => {
@@ -40,7 +38,6 @@ export const actions = {
 		if (!id) return fail(400, { id, missing: true });
 
 		await conn.execute('DELETE FROM Post WHERE id = ?', [id]);
-
 		return { success: true };
 	}
 };
