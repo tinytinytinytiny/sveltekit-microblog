@@ -13,10 +13,12 @@
 		<form action={`/posts/${data.slug}/edit`}>
 			<button type="submit">Edit</button>
 		</form>
-		<form method="POST" action="/posts?/delete">
-			<input type="hidden" name="id" value={data.id} />
-			<button type="submit">Delete</button>
-		</form>
+		{#if import.meta.env.VITE_ENVIRONMENT === 'development'}
+			<form method="POST" action="/posts?/delete">
+				<input type="hidden" name="id" value={data.id} />
+				<button type="submit">Delete</button>
+			</form>
+		{/if}
 	</footer>
 </section>
 <section aria-label="Comments">
