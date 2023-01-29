@@ -10,13 +10,13 @@ module.exports = {
 	theme: {
 		fontSize,
 		spacing,
-		textColor,
 		margin: ({ theme }) => ({
 			auto: 'auto',
 			...theme('spacing')
 		}),
 		padding: ({ theme }) => theme('spacing'),
 		extend: {
+			textColor,
 			maxWidth: {
 				copy: 'var(--copy-width)'
 			},

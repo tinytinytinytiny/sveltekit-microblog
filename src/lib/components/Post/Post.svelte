@@ -1,5 +1,8 @@
 <script>
+	import PostBody from '$lib/components/Post/PostBody.svelte';
+
 	export let id;
+	export let content;
 </script>
 
 <div id={`post-${id}`} class="stack">
@@ -7,9 +10,9 @@
 		<a class="card-link" href={`/posts/${id}/`}>
 			<span class="visually-hidden">{`Post #${id}`}</span>
 		</a>
-		<slot name="body" />
+		<PostBody {content} />
 	</div>
-	<slot name="footer" />
+	<slot />
 </div>
 
 <style>
