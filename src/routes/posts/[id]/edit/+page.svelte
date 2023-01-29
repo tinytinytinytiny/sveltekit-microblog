@@ -12,14 +12,15 @@
 	export let data;
 </script>
 
-<h1>Editing Post #{data.id}</h1>
+<slot name="title">Editing Post #{data.id}</slot>
+
 <form id="edit" method="POST" action={`/posts/${data.id}?/edit`}>
 	<TextBox>
 		<TextArea id="post" name="post" label="Edit Message" value={data.text} />
 	</TextBox>
 	<input type="hidden" name="id" value={data.id} />
 </form>
-<footer class="cluster gap-s">
+<footer class="cluster gutter-s-fixed text-step-0">
 	<Button type="submit" form="edit">Save</Button>
 	<form action={`/posts/${data.id}`}>
 		<Button color="secondary" type="submit">Cancel</Button>
