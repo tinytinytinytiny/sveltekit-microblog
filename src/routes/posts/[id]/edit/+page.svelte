@@ -1,7 +1,13 @@
 <script>
+	import { onMount } from 'svelte';
 	import TextBox from '$lib/components/TextBox.svelte';
 	import TextArea from '$lib/components/TextArea.svelte';
 	import Button from '$lib/components/Button.svelte';
+
+	onMount(() => {
+		document.querySelector('textarea').focus();
+		document.querySelector('textarea').setSelectionRange(0, 0);
+	});
 
 	export let data;
 </script>

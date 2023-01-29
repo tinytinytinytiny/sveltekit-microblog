@@ -1,4 +1,7 @@
 @layer base {
+	html {
+		scroll-padding-block-start: theme('spacing.l-xl-fixed');
+	}
 
 	html,
 	body {
@@ -12,6 +15,16 @@
 		font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
 		font-size: theme('fontSize.step-1');
 		line-height: 1.5;
+	}
+
+	main {
+		background-color: var(--background-surface);
+		padding-block: theme('spacing.m-xl') theme('spacing.2xl-3xl');
+	}
+
+	main:focus {
+		border: 0;
+		outline: none;
 	}
 
 	.layout {
