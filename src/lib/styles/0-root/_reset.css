@@ -36,6 +36,10 @@ ol[role='list'] {
 	margin-bottom: 0;
 }
 
+:where(ul[class]) ul {
+	list-style: initial;
+}
+
 ul:where([class]),
 ol:where([class]) {
 	padding: 0;

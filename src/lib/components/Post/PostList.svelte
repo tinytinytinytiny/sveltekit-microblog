@@ -4,7 +4,7 @@
 </ul>
 
 <style>
-	:global(.post-list :where(li + li)),
+	:global(.post-list > :where(li + li)),
 	:global(.post-list :where(li > .post-list)) {
 		border-block-start: 1px solid var(--color-separator);
 		padding-block-start: theme('spacing.m');
