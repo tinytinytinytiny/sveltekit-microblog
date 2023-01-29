@@ -6,7 +6,6 @@
 	export let data;
 </script>
 
-<h1>My wonderful microblog</h1>
 <InputForm action="?/post" placeholder="Twitter.com" />
 <h2>Recent Posts</h2>
 <div class="mbs-m">
