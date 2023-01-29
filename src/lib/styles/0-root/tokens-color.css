@@ -1,0 +1,4 @@
+:root {
+	--foreground-primary: theme('colors.slate.800');
+	--foreground-bold: theme('colors.slate.900');
+}

@@ -1,0 +1,88 @@
+@layer base {
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		color: var(--foreground-bold);
+		font-weight: bold;
+	}
+
+	h1,
+	h2 {
+		line-height: 1;
+	}
+
+	h1 {
+		font-size: theme('fontSize.step-5');
+	}
+
+	h2 {
+		font-size: theme('fontSize.step-3');
+	}
+
+	h3 {
+		@apply leading-tight;
+		font-size: theme('fontSize.step-2');
+	}
+
+	h4 {
+		@apply leading-snug max-w-copy;
+	}
+
+	a {
+		color: theme('colors.blue.700');
+		font-weight: bold;
+		text-decoration-thickness: 2px;
+		text-underline-position: under;
+	}
+
+	a:hover {
+		color: theme('colors.blue.900');
+	}
+
+	a:where(.card-link)::before {
+		content: '';
+		inset: 0;
+		position: absolute;
+	}
+
+	a:focus {
+		background-color: theme('colors.amber.200');
+		border: none;
+		border-bottom: 3px solid;
+		color: inherit;
+		outline: 2px dashed theme('colors.amber.600');
+		outline-offset: 2px;
+		text-decoration: none;
+	}
+
+	i,
+	em {
+		font-style: italic;
+	}
+
+	b,
+	strong {
+		font-weight: bold;
+	}
+
+	hr {
+		border: none;
+		border-block-start: 1px solid;
+		margin: var(--stack-space, 1em) 0;
+	}
+
+	figcaption {
+		margin-block-start: 1em;
+	}
+
+	p {
+		@apply max-w-copy;
+	}
+
+	ul:not([class]),
+	ol:not([class]) {
+		@apply max-w-copy;
+	}
+}

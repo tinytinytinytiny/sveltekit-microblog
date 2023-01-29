@@ -1,37 +1,24 @@
 <script>
 	import InputForm from '$lib/components/InputForm.svelte';
-	import Post from '$lib/components/Post.svelte';
+	import PostList from '$lib/components/Post/PostList.svelte';
+	import Post from '$lib/components/Post/Post.svelte';
+	import PostBody from '$lib/components/Post/PostBody.svelte';
 
 	export let data;
 </script>
 
 <h1>My wonderful microblog</h1>
 <InputForm action="?/post" placeholder="Twitter.com" />
-<h2>Recent Posts</h2>
-
-<!-- svelte-ignore a11y-no-redundant-roles -->
-<ul class="posts" role="list">
+<h2 class="mt-xl">Recent Posts</h2>
+<PostList>
 	{#each data.posts as post}
 		<li>
-			<Post content={post.text} />
-			<footer>
-				<a href={`/posts/${post.slug}/`}>{Number(post.numComments)} Comments</a>
-			</footer>
+			<Post id={post.id}>
+				<PostBody slot="body" content={post.text} />
+				<footer slot="footer">
+					<a href={`/posts/${post.id}#comments`}>{Number(post.numComments)} Comments</a>
+				</footer>
+			</Post>
 		</li>
 	{/each}
-</ul>
-
-<style>
-	h1 {
-		margin-top: 4rem;
-		margin-bottom: 2rem;
-	}
-
-	footer {
-		margin-top: 1em;
-	}
-
-	:global(.posts li p:last-child) {
-		margin-bottom: 0;
-	}
-</style>
+</PostList>

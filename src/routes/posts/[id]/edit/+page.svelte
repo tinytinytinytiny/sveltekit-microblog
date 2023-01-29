@@ -11,15 +11,16 @@
 	export let data;
 </script>
 
-<form id="edit" method="POST" action={`/posts/${data.slug}?/edit`}>
+<h1>Editing Post #{data.id}</h1>
+<form id="edit" method="POST" action={`/posts/${data.id}?/edit`}>
 	<TextBox>
 		<TextArea id="post" name="post" label="Edit Message" value={data.text} />
 	</TextBox>
 	<input type="hidden" name="id" value={data.id} />
 </form>
-<footer>
+<footer class="cluster gap-s">
 	<button type="submit" form="edit">Save</button>
-	<form action={`/posts/${data.slug}`}>
+	<form action={`/posts/${data.id}`}>
 		<button type="submit">Cancel</button>
 	</form>
 </footer>

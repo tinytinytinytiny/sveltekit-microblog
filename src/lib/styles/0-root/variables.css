@@ -1,0 +1,4 @@
+:root {
+	--copy-width: 48rem;
+	--gutter: theme('spacing.m');
+}

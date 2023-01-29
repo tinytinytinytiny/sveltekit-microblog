@@ -1,0 +1,9 @@
+@layer components {
+	.thread .thread {
+		margin-inline-start: var(--indent, theme('spacing.m-l'));
+	}
+
+	.thread :where(li > .thread) {
+		margin-block-start: var(--stack-space, 1em);
+	}
+}

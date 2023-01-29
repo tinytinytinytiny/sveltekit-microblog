@@ -4,15 +4,18 @@
 
 <style>
 	.textbox {
-		align-items: flex-start;
-		background-color: #f2f2f2;
-		border-radius: 4px;
+		align-items: center;
+		background-color: theme('colors.slate.50');
+		border: 2px solid theme('colors.slate.400');
+		border-radius: 8px;
+		box-shadow: inset 0 4px 0 theme('colors.slate.400 / 30%');
 		display: flex;
-		gap: 8px;
-		padding: 8px;
+		gap: 1em;
+		padding: 12px 16px;
 	}
 
 	.textbox:global(:has(textarea:focus)) {
-		outline: 2px solid;
+		outline: 2px dashed theme('colors.amber.600');
+		outline-offset: 3px;
 	}
 </style>

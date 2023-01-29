@@ -30,3 +30,9 @@
 		<button type="submit" bind:this={button}>Post</button>
 	</TextBox>
 </form>
+
+<style>
+	button {
+		align-self: flex-start;
+	}
+</style>

@@ -1,0 +1,35 @@
+@layer base {
+
+	html,
+	body {
+		overflow-x: -moz-hidden-unscrollable;
+		overflow-x: clip;
+	}
+
+	body {
+		color: var(--foreground-primary);
+		font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+		font-size: theme('fontSize.step-1');
+		line-height: 1.5;
+	}
+
+	.layout {
+		display: grid;
+		grid-template-rows: 1fr auto;
+		min-height: inherit;
+	}
+
+	.copy-layout {
+		display: grid;
+		grid-template-columns: 12px 1fr minmax(auto, var(--copy-width)) 1fr 12px;
+		place-content: start;
+	}
+
+	.copy-layout > .full-bleed {
+		grid-column: 1 / -1;
+	}
+
+	.copy-layout > * {
+		grid-column: 3;
+	}
+}

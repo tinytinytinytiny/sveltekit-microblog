@@ -6,7 +6,7 @@ const config = {
 const conn = connect(config);
 
 export const load = async ({ params }) => {
-	const { rows } = await conn.execute('SELECT id, text, slug, createdAt FROM Post WHERE slug = ? LIMIT 1', [params.slug]);
+	const { rows } = await conn.execute('SELECT id, text, slug, createdAt FROM Post WHERE id = ? LIMIT 1', [params.id]);
 	const post = await getComments(rows[0]);
 
 	return post;
