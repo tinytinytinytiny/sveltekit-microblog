@@ -1,11 +1,5 @@
 import { fail } from '@sveltejs/kit';
-import { connect } from '@planetscale/database';
-import { generateSlug } from 'random-word-slugs';
-
-const config = {
-	url: import.meta.env.VITE_DATABASE_URL
-};
-const conn = connect(config);
+import { updatePost, addComment } from '$lib/utils';
 
 export const actions = {
 	edit: async ({ request }) => {
@@ -21,7 +15,7 @@ export const actions = {
 			return fail(400, { id, missing: true });
 		}
 
-		await conn.execute('UPDATE Post SET text = ? WHERE id = ?', [post, id]);
+		await updatePost(id, post);
 		return { success: true };
 	},
 	comment: async ({ request }) => {
@@ -37,7 +31,7 @@ export const actions = {
 			return fail(400, { parentId, missing: true });
 		}
 
-		await conn.execute('INSERT INTO Post (text, slug, parentId) VALUES (?, ?, ?)', [post, generateSlug(), parentId]);
+		await addComment(parentId, post);
 		return { success: true };
 	}
 };

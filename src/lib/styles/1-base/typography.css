@@ -37,7 +37,7 @@
 		text-underline-position: under;
 	}
 
-	a:hover {
+	a:where(:hover) {
 		color: theme('colors.blue.900');
 	}
 
@@ -47,7 +47,7 @@
 		position: absolute;
 	}
 
-	a:focus {
+	a:where(:focus) {
 		background-color: theme('colors.amber.200');
 		border: none;
 		border-bottom: 3px solid;
