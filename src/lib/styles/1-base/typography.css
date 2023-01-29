@@ -4,7 +4,7 @@
 	h2,
 	h3,
 	h4 {
-		color: var(--foreground-bold);
+		color: var(--color-text-bold);
 		font-weight: bold;
 	}
 
@@ -27,7 +27,7 @@
 	}
 
 	h4 {
-		@apply leading-snug max-w-copy;
+		@apply leading-snug max-is-copy;
 	}
 
 	a {
@@ -52,7 +52,7 @@
 		border: none;
 		border-bottom: 3px solid;
 		color: inherit;
-		outline: 2px dashed theme('colors.amber.600');
+		outline: 2px dashed var(--color-focus-ring);
 		outline-offset: 2px;
 		text-decoration: none;
 	}
@@ -64,6 +64,7 @@
 
 	b,
 	strong {
+		color: var(--color-text-bold);
 		font-weight: bold;
 	}
 
@@ -78,11 +79,11 @@
 	}
 
 	p {
-		@apply max-w-copy;
+		@apply max-is-copy;
 	}
 
 	ul:not([class]),
 	ol:not([class]) {
-		@apply max-w-copy;
+		@apply max-is-copy;
 	}
 }

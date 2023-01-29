@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require('tailwindcss/plugin');
 
+const textColor = require('./src/design-tokens/text-colors.cjs');
 const fontSize = require('./src/design-tokens/font-sizes.cjs');
 const spacing = require('./src/design-tokens/spacing.cjs');
 
@@ -9,6 +10,7 @@ module.exports = {
 	theme: {
 		fontSize,
 		spacing,
+		textColor,
 		margin: ({ theme }) => ({
 			auto: 'auto',
 			...theme('spacing')
@@ -30,6 +32,7 @@ module.exports = {
 		preflight: false
 	},
 	plugins: [
+		require('tailwindcss-logical'),
 		plugin(function ({ addUtilities, theme }) {
 			const customUtilities = [
 				{ configKey: 'spacing', prefix: '.stack-space', property: '--stack-space' },

@@ -7,7 +7,8 @@
 	}
 
 	body {
-		color: var(--foreground-primary);
+		background-color: var(--background-body);
+		color: var(--color-text-primary);
 		font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
 		font-size: theme('fontSize.step-1');
 		line-height: 1.5;
@@ -21,7 +22,7 @@
 
 	.copy-layout {
 		display: grid;
-		grid-template-columns: 12px 1fr minmax(auto, var(--copy-width)) 1fr 12px;
+		grid-template-columns: theme('spacing.xs-fixed') 1fr minmax(auto, var(--copy-width)) 1fr theme('spacing.xs-fixed');
 		place-content: start;
 	}
 

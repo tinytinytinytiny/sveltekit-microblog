@@ -6,7 +6,7 @@
 <style>
 	:global(.post-list :where(li + li)),
 	:global(.post-list :where(li > .post-list)) {
-		border-top: 1px solid theme('colors.slate.200');
+		border-block-start: 1px solid var(--color-separator);
 		padding-block-start: theme('spacing.m');
 	}
 </style>

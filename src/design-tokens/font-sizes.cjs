@@ -1,4 +1,4 @@
-/* @link https://utopia.fyi/type/calculator?c=320,14,1.2,1600,16,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+/* @link https://utopia.fyi/type/calculator?c=320,14,1.2,1600,16,1.25,5,2,&s=0.75|0.5|0.25|0.125,1.5|2|3|4|6|7|8,xs-m|s-l|m-xl&g=s,l,xl,12 */
 
 const css = `
 --step--2: clamp(0.61rem, 0.60rem + 0.04vw, 0.64rem);
@@ -11,15 +11,19 @@ const css = `
 --step-5: clamp(2.18rem, 1.96rem + 1.09vw, 3.05rem);
 `;
 
-const generateTokens = () => {
-	const tokens = {};
+const tokens = {};
 
-	css.split(';')
-		.map(i => i.replace(/\/\*((?!\*\/).|\n)+\*\/+/g, '').trim().replace('--', ''))
-		.filter(i => i)
-		.forEach((i) => tokens[i.split(': ')[0]] = i.split(': ')[1]);
+css.split(';')
+	.map(x =>
+		x
+			.replace(/\/\*((?!\*\/).|\n)+\*\/+/g, '')
+			.trim()
+			.replace('--', '')
+	)
+	.filter(x => x)
+	.forEach((x) => {
+		const [key, value] = x.split(': ');
+		tokens[key] = value;
+	});
 
-	return tokens;
-};
-
-module.exports = generateTokens();
+module.exports = tokens;

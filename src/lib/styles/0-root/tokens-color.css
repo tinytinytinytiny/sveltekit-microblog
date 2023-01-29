@@ -1,4 +1,13 @@
 :root {
-	--foreground-primary: theme('colors.slate.800');
-	--foreground-bold: theme('colors.slate.900');
+	--background-body: theme('colors.slate.100');
+	--background-surface: #fff;
+	--color-text-primary: theme('colors.slate.900');
+	--color-text-secondary: theme('colors.slate.500');
+	--color-text-bold: theme('colors.slate.900');
+	--color-focus-ring: theme('colors.amber.600');
+	--color-separator: theme('colors.slate.200');
+
+	--background-input: theme('colors.slate.50');
+	--border-color-input: theme('colors.slate.400');
+	--color-shading-input: theme('colors.slate.400 / 30%');
 }

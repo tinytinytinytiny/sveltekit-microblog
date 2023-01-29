@@ -1,6 +1,6 @@
 @layer components {
 	.thread .thread {
-		margin-inline-start: var(--indent, theme('spacing.m-l'));
+		margin-inline-start: var(--indent, theme('spacing.m-l-fixed'));
 	}
 
 	.thread :where(li > .thread) {

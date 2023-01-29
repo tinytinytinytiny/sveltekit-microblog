@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import TextBox from '$lib/components/TextBox.svelte';
 	import TextArea from '$lib/components/TextArea.svelte';
+	import Button from '$lib/components/Button.svelte';
 
 	onMount(() => {
 		document.querySelector('textarea').focus();
@@ -19,8 +20,8 @@
 	<input type="hidden" name="id" value={data.id} />
 </form>
 <footer class="cluster gap-s">
-	<button type="submit" form="edit">Save</button>
+	<Button type="submit" form="edit">Save</Button>
 	<form action={`/posts/${data.id}`}>
-		<button type="submit">Cancel</button>
+		<Button color="secondary" type="submit">Cancel</Button>
 	</form>
 </footer>
