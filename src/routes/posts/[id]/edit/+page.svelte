@@ -6,8 +6,6 @@
 	export let data;
 </script>
 
-<slot name="title">Editing Post #{data.id}</slot>
-
 <form id="edit" method="POST" action={`/posts/${data.id}?/edit`}>
 	<TextBox>
 		<TextArea id="post" name="post" label="Edit Message" value={data.text} />

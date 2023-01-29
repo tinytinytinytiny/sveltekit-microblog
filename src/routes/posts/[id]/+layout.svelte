@@ -1,8 +1,5 @@
 <script>
-	import PostList from '$lib/components/Post/PostList.svelte';
-	import Post from '$lib/components/Post/Post.svelte';
-	import PostBody from '$lib/components/Post/PostBody.svelte';
-	import PostControls from '$lib/components/Post/PostControls.svelte';
+	import PostComments from '$lib/components/Post/PostComments.svelte';
 	import InputForm from '$lib/components/InputForm.svelte';
 
 	export let data;
@@ -10,9 +7,7 @@
 
 <div class="flex flex-col-reverse">
 	<article class="stack">
-		<h1 class="mbs-[1em]">
-			<slot name="title">Post #{data.id}</slot>
-		</h1>
+		<h1 class="mbs-[1em]">{`Post #${data.id}`}</h1>
 		<slot />
 	</article>
 	<nav>
@@ -24,25 +19,4 @@
 <InputForm action={`/posts/${data.id}?/comment`} placeholder="Write a comment">
 	<input type="hidden" name="parent-id" value={data.id} />
 </InputForm>
-<PostList>
-	{#each data.comments as comment}
-		<li>
-			<Post id={comment.id}>
-				<PostBody slot="body" content={comment.text} />
-				<PostControls slot="footer" id={comment.id} />
-			</Post>
-			{#if comment.comments.length}
-				<PostList>
-					{#each comment.comments as comment}
-						<li>
-							<Post id={comment.id}>
-								<PostBody slot="body" content={comment.text} />
-								<PostControls slot="footer" id={comment.id} />
-							</Post>
-						</li>
-					{/each}
-				</PostList>
-			{/if}
-		</li>
-	{/each}
-</PostList>
+<PostComments comments={data.comments} />
