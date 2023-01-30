@@ -44,7 +44,7 @@
 	}
 
 	.copy-layout > .full-width {
-		grid-column: 2 / 4;
+		grid-column: 2 / 5;
 	}
 
 	.copy-layout > * {
