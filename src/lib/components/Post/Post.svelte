@@ -5,7 +5,7 @@
 	export let content;
 </script>
 
-<div id={`post-${id}`} class="stack">
+<article id={`post-${id}`} class="stack">
 	<div class="post">
 		<a class="card-link" href={`/posts/${id}/`}>
 			<span class="visually-hidden">{`Post #${id}`}</span>
@@ -13,7 +13,7 @@
 		<PostBody {content} />
 	</div>
 	<slot />
-</div>
+</article>
 
 <style>
 	.post {
