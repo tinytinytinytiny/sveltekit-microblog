@@ -62,8 +62,8 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-	min-height: 100vh;
-	min-height: 100lvh;
+	min-block-size: 100vh;
+	min-block-size: 100lvh;
 }
 
 /* A elements that don't have a class get default styles */
@@ -75,7 +75,7 @@ a:not([class]) {
 img,
 picture,
 video {
-	max-width: 100%;
+	max-inline-size: 100%;
 	display: block;
 }
 

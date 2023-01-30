@@ -9,6 +9,7 @@
 		padding-block-start: theme('spacing.2xl-3xl');
 		position: sticky;
 		inset-block-start: 0;
+		text-align: center;
 		z-index: -10;
 	}
 

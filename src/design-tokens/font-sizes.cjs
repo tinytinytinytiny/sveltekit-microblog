@@ -1,4 +1,4 @@
-/* @link https://utopia.fyi/type/calculator?c=320,14,1.2,1600,16,1.25,5,2,&s=0.75|0.5|0.25|0.125,1.5|2|3|4|6|7|8,xs-m|s-l|m-xl&g=s,l,xl,12 */
+/* @link https://utopia.fyi/type/calculator?c=320,14,1.2,1600,16,1.25,5,2,&s=0.75|0.5|0.25|0.125,1.5|2|3|4|6|7|8,xs-m|s-l|m-xl|xs-3xl&g=s,l,xl,12 */
 
 const css = `
 --step--2: clamp(0.61rem, 0.60rem + 0.04vw, 0.64rem);

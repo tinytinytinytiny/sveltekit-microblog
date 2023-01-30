@@ -1,4 +1,4 @@
-/* @link https://utopia.fyi/space/calculator?c=320,14,1.2,1600,16,1.25,5,2,&s=0.75|0.5|0.25|0.125,1.5|2|3|4|6|7|8,xs-m|s-l|m-xl&g=s,l,xl,12 */
+/* @link https://utopia.fyi/space/calculator?c=320,14,1.2,1600,16,1.25,5,2,&s=0.75|0.5|0.25|0.125,1.5|2|3|4|6|7|8,xs-m|s-l|m-xl|xs-3xl&g=s,l,xl,12 */
 
 const css = `
 --space-4xs: clamp(0.13rem, calc(0.13rem + 0.00vw), 0.13rem);
@@ -31,6 +31,7 @@ const css = `
 --space-xs-m: clamp(0.69rem, calc(0.48rem + 1.02vw), 1.50rem);
 --space-s-l: clamp(0.88rem, calc(0.59rem + 1.41vw), 2.00rem);
 --space-m-xl: clamp(1.31rem, calc(0.89rem + 2.11vw), 3.00rem);
+--space-xs-3xl: clamp(0.69rem, calc(-0.64rem + 6.64vw), 6.00rem);
 `;
 
 const tokens = {

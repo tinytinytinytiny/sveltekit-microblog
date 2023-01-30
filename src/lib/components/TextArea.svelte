@@ -3,19 +3,20 @@
 	export let name;
 	export let label;
 	export let placeholder = 'Type something…';
+	export let required = null;
 	export let value = '';
 </script>
 
 <label class="visually-hidden" for={id}>{label}</label>
 <div class="textarea-wrapper">
-	<textarea rows cols maxlength="10000" {id} {name} {placeholder} bind:value on:input />
+	<textarea rows cols maxlength="10000" {id} {name} {placeholder} {required} bind:value on:input />
 	<pre class="textarea-expander" aria-hidden="true">{value}<br /></pre>
 </div>
 
 <style>
 	.textarea-wrapper {
 		flex-grow: 1;
-		max-height: 16lh;
+		max-block-size: 16lh;
 		position: relative;
 	}
 
@@ -26,13 +27,13 @@
 		display: block;
 		font-family: inherit;
 		font-size: inherit;
+		inline-size: 100%;
 		line-height: inherit;
 		outline: none;
 		margin: 0;
-		min-height: 1lh;
+		min-block-size: 1lh;
 		overflow-wrap: break-word;
 		padding: theme('spacing.xs-fixed');
-		width: 100%;
 		white-space: pre-wrap;
 		word-break: break-word;
 	}

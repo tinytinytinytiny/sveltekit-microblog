@@ -17,37 +17,27 @@
 		line-height: 1.5;
 	}
 
-	main {
-		background-color: var(--background-surface);
-		padding-block: theme('spacing.m-xl') theme('spacing.2xl-3xl');
-	}
-
-	main:focus {
-		border: 0;
-		outline: none;
-	}
-
 	.layout {
 		display: grid;
 		grid-template-rows: 1fr auto;
-		min-height: inherit;
+		min-block-size: inherit;
 	}
 
 	.copy-layout {
-		display: grid;
-		grid-template-columns: theme('spacing.xs-fixed') 1fr minmax(auto, var(--copy-width)) 1fr theme('spacing.xs-fixed');
-		place-content: start;
-	}
-
-	.copy-layout > .full-bleed {
-		grid-column: 1 / -1;
-	}
-
-	.copy-layout > .full-width {
-		grid-column: 2 / 5;
+		padding-inline: var(--site-padding);
 	}
 
 	.copy-layout > * {
-		grid-column: 3;
+		margin-inline: auto;
+		max-inline-size: var(--copy-width);
+	}
+
+	.copy-layout > .full-width,
+	.copy-layout > .full-bleed {
+		max-inline-size: 100%;
+	}
+
+	.copy-layout > .full-bleed {
+		margin-inline: calc(-1 * var(--site-padding));
 	}
 }
