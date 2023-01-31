@@ -7,7 +7,7 @@ const config = {
 const conn = connect(config);
 
 export async function getAllPosts() {
-	const { rows } = await conn.execute('SELECT parents.id, parents.text, parents.slug, parents.createdAt, SUM(1) AS numComments FROM Post parents INNER JOIN Post children ON parents.id = children.parentId GROUP BY children.parentId ORDER BY parents.createdAt DESC');
+	const { rows } = await conn.execute('SELECT parents.id, parents.text, parents.slug, parents.createdAt, SUM(1) AS numComments FROM Post parents JOIN Post children ON parents.id = children.parentId GROUP BY children.parentId ORDER BY parents.createdAt DESC');
 
 	return rows;
 }
