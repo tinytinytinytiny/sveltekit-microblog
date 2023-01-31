@@ -2,12 +2,14 @@
 	.button {
 		--button-background: theme('colors.amber.300');
 		--button-color: var(--color-text-bold);
+		--button-depth: 0.3em;
 		--button-shading: theme('colors.amber.600');
+		--button-box-shadow: 0 var(--button-depth) 0 var(--button-shading), var(--tw-shadow);
 		@apply shadow-md;
 		background-color: var(--button-background);
 		border: 2px solid var(--button-shading);
 		border-radius: 8px;
-		box-shadow: 0 0.3em 0 var(--button-shading), var(--tw-shadow);
+		box-shadow: var(--button-box-shadow);
 		color: var(--button-color);
 		cursor: pointer;
 		font-weight: bold;
@@ -23,8 +25,9 @@
 	}
 
 	.button:hover {
+		--button-depth: 0.15em;
 		@apply shadow-sm;
-		box-shadow: 0 0.15em 0 var(--button-shading), var(--tw-shadow);
+		box-shadow: var(--button-box-shadow);
 		transform: translateY(0.15em);
 	}
 

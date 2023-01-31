@@ -9,7 +9,7 @@
 		<Button color="secondary" type="submit">Edit</Button>
 	</form>
 	{#if import.meta.env.VITE_ENVIRONMENT === 'development'}
-		<form method="POST" action="/posts?/delete">
+		<form method="POST" action={`/posts/${id}?/delete`}>
 			<input type="hidden" name="id" value={id} />
 			<Button color="secondary" type="submit">Delete</Button>
 		</form>

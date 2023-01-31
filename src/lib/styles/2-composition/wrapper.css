@@ -1,0 +1,19 @@
+.wrapper {
+	--_wrapper-padding: var(--wrapper-padding, var(--site-padding));
+	--_wrapper-content-width: var(--wrapper-content-width, var(--content-width));
+	padding-inline: var(--_wrapper-padding);
+}
+
+.wrapper > * {
+	margin-inline: auto;
+	max-inline-size: var(--_wrapper-content-width);
+}
+
+.wrapper > .full-width,
+.wrapper > .full-bleed {
+	max-inline-size: 100%;
+}
+
+.wrapper > .full-bleed {
+	margin-inline: calc(-1 * var(--_wrapper-padding));
+}

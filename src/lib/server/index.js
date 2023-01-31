@@ -53,3 +53,9 @@ export async function updatePost(id, content) {
 export async function deletePost(id) {
 	return conn.execute('DELETE FROM Post WHERE id = ?', [id]);
 }
+
+export async function getParentId(childId) {
+	const { rows } = await conn.execute('SELECT parentId FROM Post WHERE id = ?', [childId]);
+	console.log(rows);
+	return rows[0].parentId;
+}

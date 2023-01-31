@@ -1,5 +1,6 @@
 :root {
 	--copy-width: 48rem;
+	--content-width: 48rem;
 	--gutter: theme('spacing.m-fixed');
 	--site-padding: theme('spacing.xs-3xl-fixed');
 }

@@ -22,22 +22,4 @@
 		grid-template-rows: 1fr auto;
 		min-block-size: inherit;
 	}
-
-	.copy-layout {
-		padding-inline: var(--site-padding);
-	}
-
-	.copy-layout > * {
-		margin-inline: auto;
-		max-inline-size: var(--copy-width);
-	}
-
-	.copy-layout > .full-width,
-	.copy-layout > .full-bleed {
-		max-inline-size: 100%;
-	}
-
-	.copy-layout > .full-bleed {
-		margin-inline: calc(-1 * var(--site-padding));
-	}
 }

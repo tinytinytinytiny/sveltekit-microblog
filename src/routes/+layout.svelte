@@ -4,7 +4,7 @@
 
 <a class="button skip-link text-step-2" href="#main-content">Skip to content</a>
 <slot />
-<footer class="copy-layout text-step-0 plb-m-xl">
+<footer class="wrapper text-step-0 plb-m-xl">
 	<p>Copyright 2023. All rights reversed.</p>
 </footer>
 

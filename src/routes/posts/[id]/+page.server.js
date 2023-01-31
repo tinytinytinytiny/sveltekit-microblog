@@ -1,5 +1,5 @@
-import { fail } from '@sveltejs/kit';
-import { updatePost, addComment } from '$lib/utils';
+import { fail, redirect } from '@sveltejs/kit';
+import { updatePost, addComment, deletePost, getParentId } from '$lib/server';
 
 export const actions = {
 	edit: async ({ request }) => {
@@ -33,5 +33,20 @@ export const actions = {
 
 		await addComment(parentId, post);
 		return { success: true };
+	},
+	delete: async ({ request }) => {
+		const data = await request.formData();
+		const id = data.get('id');
+
+		if (!id) return fail(400, { id, missing: true });
+
+		const parentId = await getParentId(id);
+		await deletePost(id);
+
+		if (parentId) {
+			throw redirect(303, `/posts/${parentId}`);
+		} else {
+			throw redirect(303, '/posts');
+		}
 	}
 };
