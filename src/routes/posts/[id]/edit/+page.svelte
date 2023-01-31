@@ -13,8 +13,8 @@
 </script>
 
 <form id="edit" method="POST" action={`/posts/${data.id}?/edit`}>
-	<TextBox>
-		<TextArea id="post" name="post" label="Edit Message" value={data.text} />
+	<TextBox label="Edit Message" let:id="edit-post">
+		<TextArea {id} name="post" value={data.text} />
 	</TextBox>
 	<input type="hidden" name="id" value={data.id} />
 </form>
