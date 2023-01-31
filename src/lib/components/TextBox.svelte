@@ -5,7 +5,7 @@
 
 <label class="visually-hidden" for={id}>{label}</label>
 <div class="input flex items-center">
-	<slot {id} />
+	<slot />
 </div>
 
 <style>
