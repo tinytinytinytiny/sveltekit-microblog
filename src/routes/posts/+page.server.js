@@ -1,7 +1,7 @@
 import { fail } from '@sveltejs/kit';
 import { getAllPosts, addPost } from '$lib/server';
 
-export const load = async () => getAllPosts();
+export const load = async () => ({ posts: getAllPosts() });
 
 export const actions = {
 	post: async ({ request }) => {
