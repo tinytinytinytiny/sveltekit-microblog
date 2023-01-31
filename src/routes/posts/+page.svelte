@@ -14,7 +14,7 @@
 	<h2 id="posts">Recent Posts</h2>
 	<div class="mbs-m">
 		<PostList>
-			{#each data.posts as post}
+			{#each data as post}
 				<li>
 					<Post id={post.id} content={post.text}>
 						<footer>

@@ -7,15 +7,9 @@ const config = {
 const conn = connect(config);
 
 export async function getAllPosts() {
-	const posts = await conn.transaction(async (tx) => {
-		await tx.execute('CREATE TEMPORARY TABLE parent_posts AS SELECT id, text, slug, createdAt FROM Post WHERE parentId IS NULL');
-		await tx.execute('CREATE TEMPORARY TABLE child_posts AS SELECT SUM(1) AS numComments, parentId AS id FROM Post WHERE parentId IS NOT NULL GROUP BY parentId');
-		return tx.execute('SELECT id, text, slug, createdAt, numComments FROM parent_posts LEFT JOIN child_posts USING (id) ORDER BY createdAt DESC');
-	});
+	const { rows } = await conn.execute('SELECT parents.id, parents.text, parents.slug, parents.createdAt, SUM(1) AS numComments FROM Post parents INNER JOIN Post children ON parents.id = children.parentId GROUP BY children.parentId ORDER BY parents.createdAt DESC');
 
-	return {
-		posts: posts.rows
-	};
+	return rows;
 }
 
 export async function getPost(id) {
