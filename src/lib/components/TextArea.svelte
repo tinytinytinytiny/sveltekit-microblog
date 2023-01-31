@@ -33,7 +33,7 @@
 		margin: 0;
 		min-block-size: 1lh;
 		overflow-wrap: break-word;
-		padding: theme('spacing.xs-fixed');
+		padding: 0.75em;
 		white-space: pre-wrap;
 		word-break: break-word;
 	}
