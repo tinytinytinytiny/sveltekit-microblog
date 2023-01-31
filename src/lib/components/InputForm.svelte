@@ -11,8 +11,8 @@
 
 <form method="POST" {action}>
 	<slot />
-	<TextBox>
-		<TextArea id="compose-post" name="post" label="Message" required {placeholder} bind:value />
+	<TextBox label="Message" id="compose-post">
+		<TextArea name="post" required {placeholder} bind:value />
 		<div class="self-start p-xs-fixed">
 			<Button type="submit" disabled={Boolean(!value.replace(/\s/g, ''))}>Post</Button>
 		</div>

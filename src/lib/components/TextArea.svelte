@@ -1,13 +1,11 @@
 <script>
 	export let id;
 	export let name;
-	export let label;
 	export let placeholder = 'Type something…';
 	export let required = null;
 	export let value = '';
 </script>
 
-<label class="visually-hidden" for={id}>{label}</label>
 <div class="textarea-wrapper">
 	<textarea rows cols maxlength="10000" {id} {name} {placeholder} {required} bind:value on:input />
 	<pre class="textarea-expander" aria-hidden="true">{value}<br /></pre>

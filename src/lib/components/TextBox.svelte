@@ -1,17 +1,16 @@
-<div class="textbox">
-	<slot />
+<script>
+	export let id;
+	export let label;
+</script>
+
+<label class="visually-hidden" for={id}>{label}</label>
+<div class="textbox input">
+	<slot {id} />
 </div>
 
 <style>
 	.textbox {
-		--input-background: theme('colors.slate.50');
-		--input-border-color: theme('colors.slate.400');
-		--input-shading: theme('colors.slate.400 / 30%');
 		align-items: center;
-		background-color: var(--input-background);
-		border: 2px solid var(--input-border-color);
-		border-radius: 8px;
-		box-shadow: inset 0 4px 0 var(--input-shading);
 		display: flex;
 	}
 

@@ -1,0 +1,14 @@
+.input {
+	--input-background: theme('colors.slate.50');
+	--input-border-color: theme('colors.slate.400');
+	--input-shading: theme('colors.slate.400 / 30%');
+	background-color: var(--input-background);
+	border: 2px solid var(--input-border-color);
+	border-radius: 8px;
+	box-shadow: inset 0 4px 0 var(--input-shading);
+}
+
+.input:focus {
+	outline: 2px dashed var(--color-focus-ring);
+	outline-offset: 3px;
+}
