@@ -32,8 +32,7 @@ ol[role='list'] {
 }
 
 :where(ul, ol) {
-	margin-top: 0;
-	margin-bottom: 0;
+	margin-block: 0;
 }
 
 :where(ul[class]) ul {
@@ -62,8 +61,8 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-	min-block-size: 100vh;
-	min-block-size: 100lvh;
+	min-height: 100vh;
+	min-height: 100lvh;
 }
 
 /* A elements that don't have a class get default styles */
@@ -75,8 +74,12 @@ a:not([class]) {
 img,
 picture,
 video {
-	max-inline-size: 100%;
+	max-width: 100%;
 	display: block;
+}
+
+img {
+	height: auto;
 }
 
 /* Inherit fonts for inputs and buttons */

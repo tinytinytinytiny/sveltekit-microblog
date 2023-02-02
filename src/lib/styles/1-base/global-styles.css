@@ -20,6 +20,6 @@
 	.layout {
 		display: grid;
 		grid-template-rows: 1fr auto;
-		min-block-size: inherit;
+		min-height: inherit;
 	}
 }

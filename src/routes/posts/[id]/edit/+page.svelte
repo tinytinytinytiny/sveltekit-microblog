@@ -18,7 +18,7 @@
 	</TextBox>
 	<input type="hidden" name="id" value={data.id} />
 </form>
-<footer class="cluster gutter-s-fixed text-step-0">
+<footer class="cluster text-step-0">
 	<Button type="submit" form="edit">Save</Button>
 	<form action={`/posts/${data.id}`}>
 		<Button color="secondary" type="submit">Cancel</Button>

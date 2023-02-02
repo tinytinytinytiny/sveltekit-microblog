@@ -1,5 +1,15 @@
 @layer base {
 
+	blockquote,
+	figcaption,
+	p {
+		max-inline-size: var(--copy-width);
+	}
+
+	:not([class]) > :where(li, dl) {
+		max-inline-size: var(--copy-width);
+	}
+
 	h1,
 	h2,
 	h3,
@@ -27,7 +37,7 @@
 	}
 
 	h4 {
-		@apply leading-snug max-is-copy;
+		@apply leading-snug;
 	}
 
 	a {
@@ -76,14 +86,5 @@
 
 	figcaption {
 		margin-block-start: 1em;
-	}
-
-	p {
-		@apply max-is-copy;
-	}
-
-	ul:not([class]),
-	ol:not([class]) {
-		@apply max-is-copy;
 	}
 }
