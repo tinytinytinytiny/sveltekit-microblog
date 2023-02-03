@@ -7,7 +7,7 @@
 <slot />
 <Footer />
 <div class="grid-preview wrapper">
-	<div></div>
+	<div />
 </div>
 
 <style>
@@ -19,7 +19,6 @@
 	}
 
 	.grid-preview {
-		--wrapper-content-width: var(--layout-outer-width);
 		height: 100%;
 		top: 0;
 		left: 0;
@@ -30,7 +29,7 @@
 
 	.grid-preview > * {
 		display: grid;
-		grid-template-columns: 0 repeat(12, 1fr) 0;
+		grid-template-columns: repeat(12, 1fr);
 		grid-template-rows: 1fr;
 		gap: var(--layout-gutter);
 		height: 100%;

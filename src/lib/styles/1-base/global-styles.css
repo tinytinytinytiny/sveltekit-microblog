@@ -21,6 +21,7 @@
 		--layout-columns: 12;
 		--layout-gutter: theme('spacing.s-l-fixed');
 		--layout-max-width: var(--content-width);
+		/* --layout-max-width: calc(var(--layout-columns) * var(--layout-column-width) + (var(--layout-columns) - 1) * var(--layout-gutter)); */
 		--layout-outer-width: calc(2 * var(--layout-gutter) + var(--layout-max-width));
 		--layout-column-width: calc((var(--layout-max-width) - (var(--layout-columns) - 1) * var(--layout-gutter)) / var(--layout-columns));
 		--layout-span: calc(var(--layout-column-width) + var(--layout-gutter));
@@ -34,5 +35,9 @@
 		display: grid;
 		gap: var(--layout-gutter);
 		grid-template-columns: repeat(auto-fill, minmax(0, var(--layout-column-width)));
+	}
+
+	.layout-grid > * {
+		grid-column: auto / span 2;
 	}
 }
