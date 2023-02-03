@@ -17,4 +17,8 @@
 		position: relative;
 		z-index: 1;
 	}
+
+	.post-text :global(p:has(img)) {
+		max-inline-size: 100%;
+	}
 </style>

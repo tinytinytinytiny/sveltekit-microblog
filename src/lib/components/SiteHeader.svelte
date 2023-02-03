@@ -1,14 +1,13 @@
-<svelte:options immutable={true} />
-
 <header>
 	<h1><slot /></h1>
 </header>
 
 <style>
 	header {
+		inset-block-start: 0;
+		grid-column: 1 / -1;
 		padding-block-start: theme('spacing.2xl-3xl');
 		position: sticky;
-		inset-block-start: 0;
 		text-align: center;
 		z-index: -10;
 	}

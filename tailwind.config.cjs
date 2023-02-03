@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require('tailwindcss/plugin');
 
+const backgroundColor = require('./src/design-tokens/bg-colors.cjs');
 const textColor = require('./src/design-tokens/text-colors.cjs');
 const fontSize = require('./src/design-tokens/font-sizes.cjs');
 const spacing = require('./src/design-tokens/spacing.cjs');
@@ -8,6 +9,7 @@ const spacing = require('./src/design-tokens/spacing.cjs');
 module.exports = {
 	content: ['./src/*.html', './src/**/*.{html,js,svelte,ts}'],
 	theme: {
+		backgroundColor,
 		fontSize,
 		spacing,
 		margin: ({ theme }) => ({

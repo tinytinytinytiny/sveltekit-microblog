@@ -1,0 +1,18 @@
+[
+	{
+		"title": "Product",
+		"links": ["Features", "Security", "Team", "Enterprise", "Customer stories", "Pricing", "Resources"]
+	},
+	{
+		"title": "Platform",
+		"links": ["Developer API", "Partners", "Atom", "Electron", "MapleStory Desktop"]
+	},
+	{
+		"title": "Support",
+		"links": ["Docs", "Community Forum", "Professional Services", "Skills", "Status"]
+	},
+	{
+		"title": "Company",
+		"links": ["About", "Blog", "Careers", "Press", "Inclusion", "Social Impact", "Shop"]
+	}
+]

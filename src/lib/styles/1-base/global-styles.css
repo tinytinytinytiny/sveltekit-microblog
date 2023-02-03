@@ -18,8 +18,21 @@
 	}
 
 	.layout {
+		--layout-columns: 12;
+		--layout-gutter: theme('spacing.s-l-fixed');
+		--layout-max-width: var(--content-width);
+		--layout-outer-width: calc(2 * var(--layout-gutter) + var(--layout-max-width));
+		--layout-column-width: calc((var(--layout-max-width) - (var(--layout-columns) - 1) * var(--layout-gutter)) / var(--layout-columns));
+		--layout-span: calc(var(--layout-column-width) + var(--layout-gutter));
+		--layout-total-gap-width: calc((var(--layout-columns) - 1) * var(--layout-gutter));
 		display: grid;
 		grid-template-rows: 1fr auto;
 		min-height: inherit;
+	}
+
+	.layout-grid {
+		display: grid;
+		gap: var(--layout-gutter);
+		grid-template-columns: repeat(auto-fill, minmax(0, var(--layout-column-width)));
 	}
 }

@@ -2,7 +2,7 @@ import { connect } from '@planetscale/database';
 import { generateSlug } from 'random-word-slugs';
 
 const config = {
-	url: import.meta.env.VITE_DATABASE_URL
+	url: import.meta.env.VITE_DATABASE_URL || process.env['VITE_DATABASE_URL']
 };
 const conn = connect(config);
 
