@@ -9,6 +9,10 @@ const spacing = require('./src/design-tokens/spacing.cjs');
 module.exports = {
 	content: ['./src/*.html', './src/**/*.{html,js,svelte,ts}'],
 	theme: {
+		screens: {
+			md: '50rem',
+			lg: '82rem'
+		},
 		backgroundColor,
 		fontSize,
 		spacing,

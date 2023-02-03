@@ -1,6 +1,6 @@
 .wrapper {
 	--_wrapper-padding: var(--wrapper-padding, var(--site-padding));
-	--_wrapper-content-width: var(--wrapper-content-width, var(--content-width));
+	--_wrapper-content-width: var(--wrapper-content-width, var(--layout-max-width));
 	padding-inline: var(--_wrapper-padding);
 }
 

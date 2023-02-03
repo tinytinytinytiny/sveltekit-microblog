@@ -1,6 +1,6 @@
 :root {
-	--content-width: 98rem;
+	--content-width: 94rem;
 	--copy-width: min(65ch, var(--content-width));
 	--gutter: theme('spacing.s-fixed');
-	--site-padding: theme('spacing.xs-3xl-fixed');
+	--site-padding: theme('spacing.xs-xl-fixed');
 }

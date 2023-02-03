@@ -31,6 +31,7 @@ const css = `
 --space-xs-m: clamp(0.69rem, calc(0.47rem + 1.05vw), 1.50rem);
 --space-s-l: clamp(0.88rem, calc(0.58rem + 1.45vw), 2.00rem);
 --space-m-xl: clamp(1.31rem, calc(0.87rem + 2.17vw), 3.00rem);
+--space-xs-xl: clamp(0.69rem, calc(0.08rem + 2.98vw), 3.00rem);
 --space-xs-3xl: clamp(0.69rem, calc(-0.71rem + 6.84vw), 6.00rem);
 `;
 
