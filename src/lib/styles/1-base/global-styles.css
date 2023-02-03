@@ -33,6 +33,22 @@
 	.layout-grid {
 		display: grid;
 		gap: var(--layout-gutter);
-		grid-template-columns: repeat(auto-fill, minmax(0, var(--layout-column-width)));
+		grid-template-columns: repeat(var(--layout-columns), 1fr);
+	}
+
+	.layout-grid > * {
+		grid-column: auto / span 6;
+	}
+
+	@screen md {
+		.layout-grid > * {
+			grid-column: auto / span 3;
+		}
+	}
+
+	@screen lg {
+		.layout-grid > * {
+			grid-column: auto / span 6;
+		}
 	}
 }
