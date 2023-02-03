@@ -5,9 +5,9 @@
 
 <footer class="stack stack-space-m-xl wrapper plb-m-xl text-step-0 bg-body">
 	<div class="layout-grid">
-		<section class="stack">
-			<div class="h2 relative inline-block">
-				<Logo />
+		<section class="stack col-span-full @lg/layout-grid:col-span-4">
+			<div class="inline-block h2 relative">
+				<div class="logo"><Logo /></div>
 				<h2 class="text-step-2 leading-tight">
 					<a class="card-link no-underline text-bold" href="/">My Wonderful Microblog</a>
 				</h2>
@@ -35,41 +35,12 @@
 </footer>
 
 <style>
-	/* .flex-grid {
-		gap: 0;
-	}
-
-	.flex-grid > * {
-		flex-basis: calc(4 * var(--layout-span) - var(--layout-gutter));
-	}
-
-	.flex-grid > :first-child {
-		flex-grow: 0;
-		flex-shrink: 1;
-		margin-block-end: var(--margin-top-h4);
-		margin-inline-end: var(--layout-gutter);
-	} */
-
-	.layout-grid {
+	footer > .layout-grid {
 		grid-row-gap: var(--margin-top-h4);
 	}
 
-	.layout-grid > :first-child {
-		grid-column: auto / span 12;
-	}
-
-	@media (min-width: 82rem) {
-		.layout-grid > * {
-			grid-column: auto / span 2;
-		}
-
-		.layout-grid > :first-child {
-			grid-column: auto / span 4;
-		}
-	}
-
-	footer :global(svg) {
-		width: var(--layout-column-width);
+	.logo {
+		max-width: theme('spacing.2xl-3xl');
 	}
 
 	.h2 + * {

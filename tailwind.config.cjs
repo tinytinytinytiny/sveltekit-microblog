@@ -13,6 +13,10 @@ module.exports = {
 			md: '50rem',
 			lg: '82rem'
 		},
+		containers: {
+			md: '46rem',
+			lg: '70rem'	
+		},
 		backgroundColor,
 		fontSize,
 		spacing,
@@ -38,6 +42,7 @@ module.exports = {
 		preflight: false
 	},
 	plugins: [
+		require('@tailwindcss/container-queries'),
 		require('tailwindcss-logical'),
 		plugin(function ({ addUtilities, theme }) {
 			const customUtilities = [

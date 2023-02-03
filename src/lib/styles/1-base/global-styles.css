@@ -24,13 +24,13 @@
 		--layout-outer-width: calc(2 * var(--layout-gutter) + var(--layout-max-width));
 		--layout-column-width: calc((var(--layout-max-width) - (var(--layout-columns) - 1) * var(--layout-gutter)) / var(--layout-columns));
 		--layout-span: calc(var(--layout-column-width) + var(--layout-gutter));
-		--layout-total-gap-width: calc((var(--layout-columns) - 1) * var(--layout-gutter));
 		display: grid;
 		grid-template-rows: 1fr auto;
 		min-height: inherit;
 	}
 
 	.layout-grid {
+		@apply @container/layout-grid;
 		display: grid;
 		gap: var(--layout-gutter);
 		grid-template-columns: repeat(var(--layout-columns), 1fr);
@@ -40,15 +40,15 @@
 		grid-column: auto / span 6;
 	}
 
-	@screen md {
+	@container layout-grid (min-width: theme('containers.md')) {
 		.layout-grid > * {
 			grid-column: auto / span 3;
 		}
 	}
 
-	@screen lg {
+	@container layout-grid (min-width: theme('containers.lg')) {
 		.layout-grid > * {
-			grid-column: auto / span 6;
+			grid-column: auto / span 2;
 		}
 	}
 }
