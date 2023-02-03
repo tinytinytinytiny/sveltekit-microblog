@@ -7,7 +7,7 @@
 	<div class="layout-grid">
 		<section class="stack col-span-full @lg/layout-grid:col-span-4">
 			<div class="inline-block h2 relative">
-				<div class="logo"><Logo /></div>
+				<div class="logo max-w-2xl-3xl"><Logo /></div>
 				<h2 class="text-step-2 leading-tight">
 					<a class="card-link no-underline text-bold" href="/">My Wonderful Microblog</a>
 				</h2>
@@ -37,10 +37,6 @@
 <style>
 	footer > .layout-grid {
 		grid-row-gap: var(--margin-top-h4);
-	}
-
-	.logo {
-		max-width: theme('spacing.2xl-3xl');
 	}
 
 	.h2 + * {

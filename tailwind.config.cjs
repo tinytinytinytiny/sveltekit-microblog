@@ -28,13 +28,16 @@ module.exports = {
 		extend: {
 			textColor,
 			maxWidth: {
-				copy: 'var(--copy-width)'
+				copy: 'var(--copy-width)',
+				...spacing
 			},
 			minWidth: {
-				copy: 'var(--copy-width)'
+				copy: 'var(--copy-width)',
+				...spacing
 			},
 			width: {
-				copy: 'var(--copy-width)'
+				copy: 'var(--copy-width)',
+				...spacing
 			}
 		}
 	},
