@@ -6,9 +6,9 @@
 <a class="button skip-link text-step-2" href="#main-content">Skip to content</a>
 <slot />
 <Footer />
-<div class="grid-preview wrapper">
+<!-- <div class="grid-preview wrapper">
 	<div />
-</div>
+</div> -->
 
 <style>
 	.skip-link {
@@ -18,7 +18,7 @@
 		position: absolute;
 	}
 
-	.grid-preview {
+/* 	.grid-preview {
 		height: 100%;
 		top: 0;
 		left: 0;
@@ -33,5 +33,5 @@
 		grid-template-rows: 1fr;
 		gap: var(--layout-gutter);
 		height: 100%;
-	}
+	} */
 </style>
