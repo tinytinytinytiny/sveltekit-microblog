@@ -12,10 +12,10 @@
 					<a class="card-link no-underline text-bold" href="/">My Wonderful Microblog</a>
 				</h2>
 			</div>
-			<p>Copyright 2023. All rights reversed.</p>
+			<p>{`Copyright ${new Date().getFullYear()}. All rights reversed.`}</p>
 			<div class="cluster gutter-s">
-				<a class="font-normal text-primary decoration-auto" href="/posts">Terms</a>
-				<a class="font-normal text-primary decoration-auto" href="/posts">Privacy Policy</a>
+				<a class="nav-link font-normal text-primary decoration-auto" href="/posts">Terms</a>
+				<a class="nav-link font-normal text-primary decoration-auto" href="/posts">Privacy Policy</a>
 			</div>
 		</section>
 		{#each navigation as section}
@@ -25,7 +25,7 @@
 				<ul class="stack stack-space-xs" role="list">
 					{#each section.links as link}
 						<li>
-							<a class="font-normal text-primary decoration-auto" href="/posts">{link}</a>
+							<a class="nav-link font-normal text-primary decoration-auto" href="/posts">{link}</a>
 						</li>
 					{/each}
 				</ul>
@@ -41,5 +41,9 @@
 
 	.h2 + * {
 		margin-block-start: var(--margin-bottom-h3);
+	}
+
+	.nav-link {
+		--link-underline-thickness-focus: 2px;
 	}
 </style>

@@ -10,12 +10,18 @@ module.exports = {
 	content: ['./src/*.html', './src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		screens: {
+			sm: '34rem',
 			md: '50rem',
-			lg: '82rem'
+			lg: '66rem',
+			xl: '82rem',
+			'2xl': '98rem'
 		},
 		containers: {
+			sm: '30rem',
 			md: '46rem',
-			lg: '70rem'	
+			lg: '62rem',
+			xl: '78rem',
+			'2xl': '94rem'
 		},
 		backgroundColor,
 		fontSize,

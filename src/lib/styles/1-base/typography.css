@@ -41,10 +41,11 @@
 	}
 
 	a {
+		--link-underline-thickness-focus: 3px;
 		color: theme('colors.blue.700');
 		font-weight: bold;
 		text-decoration-thickness: 2px;
-		text-underline-position: under;
+		text-underline-position: from-font;
 	}
 
 	a:where(:hover) {
@@ -60,7 +61,7 @@
 	a:where(:focus) {
 		background-color: theme('colors.amber.200');
 		border: none;
-		border-bottom: 3px solid;
+		box-shadow: inset 0 calc(-1 * var(--link-underline-thickness-focus)) 0 currentColor;
 		color: inherit;
 		outline: 2px dashed var(--color-focus-ring);
 		outline-offset: 2px;

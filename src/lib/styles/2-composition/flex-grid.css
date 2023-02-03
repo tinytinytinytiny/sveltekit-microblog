@@ -1,10 +1,11 @@
 .flex-grid {
+	--_gutter: var(--gutter-default, var(--gutter));
 	display: flex;
 	flex-flow: row wrap;
-	gap: var(--gutter);
+	gap: var(--_gutter);
 }
 
 .flex-grid > * {
-	flex-basis: var(--grid-min-item-size, var(--layout-column-width));
+	flex-basis: var(--grid-min-item-size);
 	flex-grow: 1;
 }

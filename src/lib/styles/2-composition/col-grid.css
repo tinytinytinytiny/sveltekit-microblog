@@ -1,10 +1,11 @@
 .col-grid {
+	--_gutter: var(--gutter-default, var(--gutter));
 	--grid-column-count: 4;
-	--grid-min-item-size: calc(3 * var(--layout-span));
+	/* computed */
 	--gap-count: calc(var(--grid-column-count) - 1);
-	--total-gap-width: calc(var(--gap-count) * var(--gutter));
+	--total-gap-width: calc(var(--gap-count) * var(--_gutter));
 	--grid-max-item-size: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
 	display: grid;
-	gap: var(--gutter);
+	gap: var(--_gutter);
 	grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-min-item-size), var(--grid-max-item-size)), 1fr));
 }
