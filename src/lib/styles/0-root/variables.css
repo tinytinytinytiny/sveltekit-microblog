@@ -1,5 +1,4 @@
 :root {
-	--content-width: 94rem;
 	--copy-width: 65ch;
 	--gutter-default: theme('spacing.s-fixed');
 	--grid-min-item-size: 12rem;
