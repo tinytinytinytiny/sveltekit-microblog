@@ -6,29 +6,27 @@
 </script>
 
 <article id={`post-${id}`} class="stack copy">
-	<div class="post">
-		<a class="card-link" href={`/posts/${id}/`}>
-			<span class="visually-hidden">{`Post #${id}`}</span>
-		</a>
+	<div class="relative">
+		<header>
+			<a class="card-link" href={`/posts/${id}/`}>
+				<span class="visually-hidden">{`Post #${id}`}</span>
+			</a>
+		</header>
 		<PostBody {content} />
 	</div>
 	<slot />
 </article>
 
 <style>
-	.post {
-		position: relative;
-	}
-
 	.card-link {
 		-webkit-touch-callout: none;
 	}
 
-	.card-link:hover + :global(*) {
+	header:hover + :global(*) {
 		background-color: theme('colors.slate.100');
 	}
 
-	.card-link:focus + :global(*) {
+	header:focus-within + :global(*) {
 		background-color: theme('colors.amber.100');
 		outline: 2px dashed var(--color-focus-ring);
 		outline-offset: 2px;

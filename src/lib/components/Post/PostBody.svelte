@@ -8,17 +8,17 @@
 	export let content;
 </script>
 
-<article class="post-text stack copy">
+<section class="post-body stack copy">
 	{@html md.render(content)}
-</article>
+</section>
 
 <style>
-	.post-text :global(a) {
+	.post-body :global(a) {
 		position: relative;
 		z-index: 1;
 	}
 
-	.post-text :global(p:has(img)) {
+	.post-body :global(p:has(img)) {
 		max-inline-size: 100%;
 	}
 </style>

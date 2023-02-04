@@ -11,7 +11,7 @@
 <SiteHeader>Microblog</SiteHeader>
 <Main>
 	<InputForm action="?/post" placeholder="Twitter.com" />
-	<div class="mbs-l-xl">
+	<section class="mbs-l-xl" aria-label="Posts">
 		<PostList>
 			{#each data.posts as post}
 				<li>
@@ -25,5 +25,5 @@
 				</li>
 			{/each}
 		</PostList>
-	</div>
+	</section>
 </Main>
