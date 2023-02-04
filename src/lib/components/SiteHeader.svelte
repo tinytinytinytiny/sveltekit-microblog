@@ -6,7 +6,7 @@
 	header {
 		inset-block-start: 0;
 		grid-column: 1 / -1;
-		padding-block: theme('spacing.xl-3xl');
+		padding-block: theme('spacing.xl-3xl-fixed');
 		position: sticky;
 		text-align: center;
 		z-index: -10;

@@ -1,4 +1,4 @@
-<div class="wrapper bg-surface">
+<div class="wrapper bg-surface md:m-s-l-fixed">
 	<main tabindex="-1" id="main-content" class="stack copy">
 		<slot />
 	</main>

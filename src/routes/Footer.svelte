@@ -3,11 +3,11 @@
 	import Logo from '$lib/assets/logo.svelte';
 </script>
 
-<footer class="stack stack-space-m-xl wrapper plb-m-xl text-step-0 bg-body">
+<footer class="wrapper pbs-l-fixed pbe-l-2xl-fixed text-step-0 bg-body">
 	<div class="layout-grid">
 		<section class="stack col-span-full @lg/layout-grid:col-span-4">
 			<div class="h2 inline-block relative">
-				<div class="logo max-w-2xl-3xl"><Logo /></div>
+				<div class="logo max-w-2xl-3xl-fixed"><Logo /></div>
 				<h2 class="text-step-2 leading-tight">
 					<a class="card-link no-underline text-bold" href="/">My Wonderful Microblog</a>
 				</h2>
