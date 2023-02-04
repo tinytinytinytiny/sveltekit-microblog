@@ -1,8 +1,8 @@
 :root {
-	--margin-top-h2: theme('spacing.xl');
+	--margin-top-h2: theme('spacing.xl-2xl');
 	--margin-bottom-h2: theme('spacing.s');
-	--margin-top-h3: theme('spacing.l');
-	--margin-bottom-h3: theme('spacing.2xs');
+	--margin-top-h3: theme('spacing.l-xl');
+	--margin-bottom-h3: theme('spacing.xs');
 	--margin-top-h4: theme('spacing.l');
-	--margin-bottom-h4: theme('spacing.3xs');
+	--margin-bottom-h4: theme('spacing.2xs-xs');
 }

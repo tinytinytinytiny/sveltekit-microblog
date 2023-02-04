@@ -8,8 +8,17 @@
 
 <Main>
 	<div class="flex flex-col-reverse">
-		<article class="stack">
-			<h1 class="mbs-[1em]">{`Post #${data.id}`}</h1>
+		<article class="stack copy">
+			<header class="mbs-l-xl">
+				<h1>{`Post #${data.id}`}</h1>
+				{#if data.parentId}
+					<p class="text-secondary text-step-0 mbs-2xs">
+						Reply to <a class="text-inherit focus:text-primary" href={`/posts/${data.parentId}`}
+							>{`post #${data.parentId}`}</a
+						>
+					</p>
+				{/if}
+			</header>
 			<slot />
 		</article>
 		<nav>
@@ -20,5 +29,7 @@
 	<InputForm action={`/posts/${data.id}?/comment`} placeholder="Write a comment">
 		<input type="hidden" name="parent-id" value={data.id} />
 	</InputForm>
-	<PostComments comments={data.comments} />
+	<div class="mbs-l">
+		<PostComments comments={data.comments} />
+	</div>
 </Main>

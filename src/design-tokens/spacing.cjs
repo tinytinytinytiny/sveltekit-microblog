@@ -1,4 +1,4 @@
-/* @link https://utopia.fyi/space/calculator?c=326,14,1.2,1568,16,1.25,5,2,&s=0.75|0.5|0.25|0.125,1.5|2|3|4|6|7|8,xs-m|s-l|m-xl|xs-3xl&g=s,l,3xl,12 */
+/* @link https://utopia.fyi/space/calculator?c=326,14,1.2,1568,16,1.25,6,2,&s=0.75|0.5|0.25|0.125,1.5|2|3|4|6|7|8,xs-m|s-l|m-xl|l-2xl|xl-3xl|xs-xl&g=s,l,3xl,12 */
 
 const css = `
 --space-4xs: clamp(0.13rem, calc(0.13rem + 0.00vw), 0.13rem);
@@ -31,9 +31,19 @@ const css = `
 --space-xs-m: clamp(0.69rem, calc(0.47rem + 1.05vw), 1.50rem);
 --space-s-l: clamp(0.88rem, calc(0.58rem + 1.45vw), 2.00rem);
 --space-m-xl: clamp(1.31rem, calc(0.87rem + 2.17vw), 3.00rem);
+--space-l-2xl: clamp(1.75rem, calc(1.16rem + 2.90vw), 4.00rem);
+--space-xl-3xl: clamp(2.63rem, calc(1.74rem + 4.35vw), 6.00rem);
 --space-xs-xl: clamp(0.69rem, calc(0.08rem + 2.98vw), 3.00rem);
---space-xs-3xl: clamp(0.69rem, calc(-0.71rem + 6.84vw), 6.00rem);
 `;
+
+const semanticTokens = {
+	'h2-bs': 'var(--margin-top-h2)',
+	'h2-be': 'var(--margin-bottom-h2)',
+	'h3-bs': 'var(--margin-top-h3)',
+	'h3-be': 'var(--margin-bottom-h3)',
+	'h4-bs': 'var(--margin-top-h4)',
+	'h4-be': 'var(--margin-bottom-h4)'
+};
 
 const tokens = {
 	'0': '0'
@@ -53,7 +63,7 @@ css.split(';')
 		tokens[`${key}-fixed`] = remToPx(value);
 	});
 
-module.exports = tokens;
+module.exports = { ...tokens, ...semanticTokens };
 
 function remToPx(string) {
 	const matchRem = new RegExp(/[+-]?(\d*|\d{1,3}(,\d{3})*)(\.\d+)?(rem)/, 'g');

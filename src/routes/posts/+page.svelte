@@ -8,11 +8,10 @@
 	export let data;
 </script>
 
-<SiteHeader>My wonderful microblog</SiteHeader>
+<SiteHeader>Microblog</SiteHeader>
 <Main>
 	<InputForm action="?/post" placeholder="Twitter.com" />
-	<h2 id="posts">Recent Posts</h2>
-	<div class="mbs-m">
+	<div class="mbs-l-xl">
 		<PostList>
 			{#each data.posts as post}
 				<li>
@@ -28,10 +27,3 @@
 		</PostList>
 	</div>
 </Main>
-
-<style>
-	h2 {
-		border-block-end: 1px solid var(--color-separator);
-		padding-block-end: var(--margin-bottom-h2);
-	}
-</style>

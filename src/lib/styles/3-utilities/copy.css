@@ -4,7 +4,7 @@
 	}
 
 	.copy > :where(figure, figure + *, hr, hr + *) {
-		--modified-stack-space: theme('spacing.xl');
+		--modified-stack-space: theme('spacing.l-xl');
 	}
 
 	.copy > :where(aside, aside + *) {

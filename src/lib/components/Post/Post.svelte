@@ -5,7 +5,7 @@
 	export let content;
 </script>
 
-<article id={`post-${id}`} class="stack">
+<article id={`post-${id}`} class="stack copy">
 	<div class="post">
 		<a class="card-link" href={`/posts/${id}/`}>
 			<span class="visually-hidden">{`Post #${id}`}</span>
@@ -18,6 +18,10 @@
 <style>
 	.post {
 		position: relative;
+	}
+
+	.card-link {
+		-webkit-touch-callout: none;
 	}
 
 	.card-link:hover + :global(*) {
