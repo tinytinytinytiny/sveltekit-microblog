@@ -56,7 +56,7 @@
 						href={`/posts/page/${num}`}
 						class="button"
 						aria-current={page == num ? 'page' : null}
-						aria-label={page == num ? `Current Page, Page ${num}` : `Page ${num}`}
+						aria-label={`Page ${num}`}
 						data-color={page == num ? 'primary' : 'secondary'}
 					>
 						{num}
