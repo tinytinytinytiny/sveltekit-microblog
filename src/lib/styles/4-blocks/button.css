@@ -24,7 +24,7 @@
 	}
 
 	.button:where([data-color='secondary']) {
-		--button-background: theme('colors.slate.300 / 80%');
+		--button-background: theme('colors.slate.300');
 		--button-shading: theme('colors.slate.400');
 	}
 
