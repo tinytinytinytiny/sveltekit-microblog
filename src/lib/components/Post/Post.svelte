@@ -31,4 +31,8 @@
 		outline: 2px dashed var(--color-focus-ring);
 		outline-offset: 2px;
 	}
+
+	.card-link:focus {
+		outline: none;
+	}
 </style>
