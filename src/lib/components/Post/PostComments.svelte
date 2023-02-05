@@ -7,14 +7,18 @@
 </script>
 
 <PostList>
-	{#each comments as comment}
-		<li>
-			<Post id={comment.id} content={comment.text}>
-				<PostControls id={comment.id} />
-			</Post>
-			{#if comment.comments.length}
-				<svelte:self comments={comment.comments} />
-			{/if}
-		</li>
-	{/each}
+	{#if comments?.length}
+		{#each comments as comment}
+			<li>
+				<Post id={comment.id} content={comment.text}>
+					<PostControls id={comment.id} />
+				</Post>
+				{#if comment.comments.length}
+					<svelte:self comments={comment.comments} />
+				{/if}
+			</li>
+		{/each}
+	{:else}
+		<p class="text-secondary">Be the first to comment!</p>
+	{/if}
 </PostList>

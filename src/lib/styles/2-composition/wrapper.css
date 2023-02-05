@@ -9,10 +9,7 @@
 	max-inline-size: var(--_wrapper-content-width);
 }
 
-.wrapper > :where(.full-width, .full-bleed) {
-	max-inline-size: 100%;
-}
-
 .wrapper > :where(.full-bleed) {
 	margin-inline: calc(-1 * var(--_wrapper-padding));
+	max-inline-size: calc(100% + 2 * var(--_wrapper-padding));
 }

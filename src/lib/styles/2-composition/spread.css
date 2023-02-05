@@ -1,0 +1,10 @@
+@layer components {
+	.spread {
+		--_gutter: var(--gutter-default, var(--gutter));
+		align-items: center;
+		display: flex;
+		flex-flow: row wrap;
+		gap: var(--_gutter);
+		justify-content: space-between;
+	}
+}
