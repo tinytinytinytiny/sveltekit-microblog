@@ -30,7 +30,7 @@
 </script>
 
 {#if count}
-	<nav class="cluster justify-center gutter-m-xl-fixed mbs-l-xl" aria-label="Pages">
+	<nav class="cluster justify-center gutter-m-xl-fixed mbs-xl-2xl" aria-label="Pages">
 		<a
 			href={`/posts/page/${Math.max(1, page - 1)}`}
 			class="button grow sm:grow-0"

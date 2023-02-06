@@ -18,9 +18,9 @@
 	</TextBox>
 	<input type="hidden" name="id" value={data.id} />
 </form>
-<footer class="cluster text-step-0">
-	<Button type="submit" form="edit">Save</Button>
+<footer class="cluster text-step-0 justify-end">
 	<form action={`/posts/${data.id}`}>
 		<Button color="secondary" type="submit">Cancel</Button>
 	</form>
+	<Button className="grow sm:grow-0" type="submit" form="edit">Save</Button>
 </footer>
