@@ -3,7 +3,7 @@
 	import Logo from '$lib/assets/logo.svelte';
 </script>
 
-<footer class="wrapper pbs-l-fixed pbe-l-2xl-fixed text-step-0 bg-body">
+<footer class="wrapper plb-l-2xl-fixed text-step-0">
 	<div class="layout-grid">
 		<section class="stack col-span-full @lg/layout-grid:col-span-4">
 			<div class="h2 inline-block relative">

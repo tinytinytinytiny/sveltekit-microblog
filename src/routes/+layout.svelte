@@ -9,7 +9,7 @@
 >
 	Skip to content
 </a>
-<div class="wrapper bg-surface pbs-m-xl-fixed pbe-xl-2xl-fixed md:m-s-l-fixed">
+<div class="wrapper bg-surface pbs-l-xl-fixed pbe-xl-2xl-fixed md:mbs-s-l-fixed md:mli-s-l-fixed">
 	<slot />
 </div>
 <Footer />
