@@ -18,6 +18,10 @@
 		z-index: 1;
 	}
 
+	.post-body :global(p) {
+		overflow-wrap: break-word;
+	}
+
 	.post-body :global(p:has(img)) {
 		max-inline-size: 100%;
 	}
