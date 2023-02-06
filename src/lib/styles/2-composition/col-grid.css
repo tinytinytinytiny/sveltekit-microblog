@@ -1,6 +1,6 @@
 @layer components {
 	.col-grid {
-		--_gutter: var(--gutter-default, var(--gutter));
+		--_gutter: var(--gutter, var(--gutter-default));
 		--grid-column-count: 4;
 		/* computed */
 		--gap-count: calc(var(--grid-column-count) - 1);

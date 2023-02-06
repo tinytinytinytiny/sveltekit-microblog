@@ -1,5 +1,5 @@
 .flex-grid {
-	--_gutter: var(--gutter-default, var(--gutter));
+	--_gutter: var(--gutter, var(--gutter-default));
 	display: flex;
 	flex-flow: row wrap;
 	gap: var(--_gutter);

@@ -10,18 +10,27 @@
 		--button-depth-current: var(--button-depth);
 		--button-box-shadow: 0 var(--button-depth-current) 0 var(--button-shading), var(--tw-shadow);
 		@apply shadow-md;
+		align-items: center;
 		background-color: var(--button-background);
 		border: 2px solid var(--button-shading);
 		border-radius: 8px;
 		box-shadow: var(--button-box-shadow);
 		color: var(--button-color);
 		cursor: pointer;
+		display: inline-flex;
 		font-weight: bold;
+		gap: theme('spacing.2xs-fixed');
+		justify-content: center;
 		margin: 0 0 var(--button-depth) 0;
 		outline: none;
-		padding: 0.25em 0.75em;
+		padding: 0.25em 1em;
 		text-align: center;
 		text-decoration: none;
+	}
+
+	.button svg {
+		max-height: 1lh;
+		width: auto;
 	}
 
 	.button:where([data-color='secondary']) {

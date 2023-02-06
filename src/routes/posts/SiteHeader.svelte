@@ -1,15 +1,10 @@
-<header class="full-bleed">
+<header class="full-bleed plb-l-xl-fixed mbe-l-xl text-center">
 	<h1>
 		<a class="text-secondary no-underline" href="/posts">Microblog</a>
 	</h1>
 </header>
 
 <style>
-	header {
-		padding-block: theme('spacing.l-xl-fixed') theme('spacing.xl-3xl-fixed');
-		text-align: center;
-	}
-
 	header h1 {
 		font-size: max(3.14rem, 1rem + 16vw);
 		letter-spacing: -0.0333em;

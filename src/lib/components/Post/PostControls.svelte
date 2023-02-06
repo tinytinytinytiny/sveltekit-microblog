@@ -39,7 +39,7 @@
 	{#if replying}
 		<InputForm
 			action={`/posts/${id}?/comment`}
-			placeholder="Write a comment"
+			placeholder="Write a reply"
 			onSubmit={() => (replying = false)}
 		>
 			<input type="hidden" name="parent-id" value={id} />

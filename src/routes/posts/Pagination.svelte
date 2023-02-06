@@ -1,4 +1,7 @@
 <script>
+	import ArrowLeft from '$lib/assets/arrow-left.svelte';
+	import ArrowRight from '$lib/assets/arrow-right.svelte';
+
 	export let count;
 	export let page;
 
@@ -27,18 +30,18 @@
 </script>
 
 {#if count}
-	<nav class="cluster justify-center pbs-l mbs-l-xl" aria-label="Pages">
+	<nav class="cluster justify-center gutter-m-xl-fixed mbs-l-xl" aria-label="Pages">
 		<a
 			href={`/posts/page/${Math.max(1, page - 1)}`}
 			class="button grow sm:grow-0"
 			data-color="secondary"
 			class:invisible={page < 2}
-			aria-label="Previous Page">Prev</a
+			aria-label="Previous Page"><ArrowLeft /> Prev</a
 		>
 		<!-- svelte-ignore a11y-no-redundant-roles -->
-		<ol class="hidden sm:cluster" role="list">
+		<ol class="hidden gutter-s-fixed md:cluster" role="list">
 			{#if !visiblePages.includes(1)}
-				<li class="hidden md:items-end md:cluster">
+				<li class="hidden lg:items-end lg:cluster">
 					<a
 						href="/posts/page/1"
 						class="button"
@@ -64,7 +67,7 @@
 				</li>
 			{/each}
 			{#if !visiblePages.includes(count)}
-				<li class="hidden md:items-end md:cluster">
+				<li class="hidden lg:items-end lg:cluster">
 					<span class="aria-hidden text-secondary">…</span>
 					<a
 						href={`/posts/page/${count}`}
@@ -82,14 +85,13 @@
 			class="button grow sm:grow-0"
 			data-color="secondary"
 			class:invisible={page >= count}
-			aria-label="Next Page">Next</a
+			aria-label="Next Page">Next <ArrowRight /></a
 		>
 	</nav>
 {/if}
 
 <style>
 	nav {
-		border-block-start: 1px solid var(--color-separator);
 		max-inline-size: var(--layout-max-width);
 	}
 </style>
