@@ -1,9 +1,9 @@
 :root {
-	--background-body: theme('colors.slate.100');
-	--background-surface: #fff;
+	--background-body: #fff;
+	--background-surface: theme('colors.slate.100');
 	--color-text-primary: theme('colors.slate.900');
 	--color-text-secondary: theme('colors.slate.500');
 	--color-text-bold: theme('colors.slate.900');
 	--color-focus-ring: theme('colors.amber.600');
-	--color-separator: theme('colors.slate.200');
+	--color-separator: theme('colors.slate.300');
 }

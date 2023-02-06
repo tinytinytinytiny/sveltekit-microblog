@@ -9,7 +9,7 @@
 	export let data;
 </script>
 
-<SiteHeader>Microblog</SiteHeader>
+<SiteHeader />
 <Main>
 	<InputForm action="/posts?/post" placeholder="Twitter.com" />
 	<section id="posts" class="mbs-l-xl" aria-label="Posts">
@@ -27,5 +27,5 @@
 			{/each}
 		</PostList>
 	</section>
-	<Pagination slot="footer" count={data.pages} page={data.page} />
 </Main>
+<Pagination count={data.pages} page={data.page} />

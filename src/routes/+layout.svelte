@@ -3,22 +3,26 @@
 	import Footer from './Footer.svelte';
 </script>
 
-<a class="button skip-link text-step-2" href="#main-content">Skip to content</a>
-<slot />
+<a
+	class="skip-link button text-step-2 shadow-xl absolute top-s-fixed left-s-fixed"
+	href="#main-content"
+>
+	Skip to content
+</a>
+<div class="wrapper bg-surface pbs-m-xl-fixed pbe-xl-2xl-fixed md:m-s-l-fixed">
+	<slot />
+</div>
 <Footer />
+
 <!-- <div class="grid-preview wrapper">
 	<div />
 </div> -->
-
 <style>
-	.skip-link {
-		@apply shadow-xl;
-		top: theme('spacing.s-fixed');
-		left: theme('spacing.s-fixed');
-		position: absolute;
+	.wrapper {
+		--wrapper-content-width: calc(6 * var(--layout-span) - var(--layout-gutter));
 	}
 
-/* 	.grid-preview {
+	/* 	.grid-preview {
 		height: 100%;
 		top: 0;
 		left: 0;

@@ -23,7 +23,7 @@
 	}
 
 	header:hover + :global(*) {
-		background-color: theme('colors.slate.100');
+		background-color: theme('colors.slate.200');
 	}
 
 	header:focus-within + :global(*) {
