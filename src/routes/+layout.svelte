@@ -18,6 +18,10 @@
 	<div />
 </div> -->
 <style>
+	.skip-link {
+		box-shadow: var(--button-box-shadow);
+	}
+
 	.wrapper {
 		--wrapper-content-width: calc(6 * var(--layout-span) - var(--layout-gutter));
 	}
