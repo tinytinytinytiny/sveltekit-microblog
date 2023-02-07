@@ -7,19 +7,24 @@
 
 	const MAX_PAGES = 5;
 	const PAGE_GROUPS = Math.ceil(Number(count) / (MAX_PAGES - 1));
+
 	let pages;
 	let visiblePages;
 
 	$: {
-		pages = [...Array(PAGE_GROUPS)].map((_, group) =>
-			[...Array(MAX_PAGES)]
-				.map(() => group * MAX_PAGES)
-				.map((x, i) => x + i + 1)
-				.map((num) => (group === 0 ? num : num - group))
-				.filter((num) => num <= Number(count))
-		);
+		pages = [...Array(PAGE_GROUPS)]
+			.map((_, group) =>
+				[...Array(MAX_PAGES)]
+					.map(() => group * MAX_PAGES)
+					.map((x, i) => x + i + 1)
+					.map((num) => (group === 0 ? num : num - group))
+					.filter((num) => num <= Number(count))
+			)
+			.reverse();
 
-		visiblePages = [...pages].reverse().find((x) => x.includes(page));
+		visiblePages = pages.find((x) => x.includes(page));
+		// if current page is first in group, add the previous page so user will be able to go back
+		// i.e. if page group is [5, 6, 7, 8, 9] and current page is 5, convert it to [4, 5, 6, 7, 8]
 		if (page == visiblePages[0] && page > 1) {
 			visiblePages.splice(0, 0, visiblePages[0] - 1);
 			if (visiblePages.length > MAX_PAGES) {
