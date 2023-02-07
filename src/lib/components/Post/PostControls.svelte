@@ -1,6 +1,7 @@
 <script>
 	import { applyAction, enhance } from '$app/forms';
 	import { invalidateAll } from '$app/navigation';
+	import { page } from '$app/stores';
 	import Button from '$lib/components/Button.svelte';
 	import InputForm from '$lib/components/InputForm.svelte';
 
@@ -35,7 +36,8 @@
 					method="POST"
 					action={`/posts/${id}?/delete`}
 					use:enhance={() => {
-						return async ({ result }) => {
+						return async ({ result, update }) => {
+							if ($page.data.id === id) return update();
 							invalidateAll();
 							await applyAction(result);
 						};
