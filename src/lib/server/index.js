@@ -8,21 +8,21 @@ const conn = connect(config);
 
 export async function getAllPosts({ limit = 5, offset = 0 } = {}) {
 	const { rows } = await conn.execute('SELECT parents.id, parents.text, parents.slug, parents.createdAt, COUNT(children.parentId) AS numComments FROM (SELECT id, text, slug, createdAt, parentId FROM Post WHERE parentId IS NULL) parents LEFT JOIN Post children ON parents.id = children.parentId GROUP BY id ORDER BY createdAt DESC LIMIT ? OFFSET ?', [limit, offset]);
-
 	return rows;
 }
 
 export async function getPostCount() {
 	const { rows } = await conn.execute('SELECT COUNT(*) total FROM Post WHERE parentId IS NULL');
-
 	return rows[0].total;
+}
+
+export async function getPostWithComments(id) {
+	return getComments(await getPost(id));
 }
 
 export async function getPost(id) {
 	const { rows } = await conn.execute('SELECT id, text, slug, createdAt, parentId FROM Post WHERE id = ? LIMIT 1', [id]);
-	const post = await getComments(rows[0]);
-
-	return post;
+	return rows[0];
 }
 
 export async function getComments(post) {

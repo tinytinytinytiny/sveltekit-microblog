@@ -1,5 +1,5 @@
 import { fail, redirect } from '@sveltejs/kit';
-import { updatePost, addComment, deletePost, getParentId } from '$lib/server';
+import { updatePost, addComment, deletePost, getParentId, getPost } from '$lib/server';
 
 export const actions = {
 	edit: async ({ request }) => {
@@ -43,7 +43,7 @@ export const actions = {
 		const parentId = await getParentId(id);
 		await deletePost(id);
 
-		if (parentId) {
+		if (parentId && await getPost(parentId)) {
 			throw redirect(303, `/posts/${parentId}`);
 		} else {
 			throw redirect(303, '/posts');
