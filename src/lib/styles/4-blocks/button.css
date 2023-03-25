@@ -1,11 +1,11 @@
 @layer components {
 	.button {
-		--button-background: theme('colors.amber.300');
+		--button-background: var(--button-primary-background-default);
 		--button-color: var(--color-text-bold);
 		--button-depth: 0.3em;
 		--button-depth-hover: 0.15em;
 		--button-depth-active: 0em;
-		--button-shading: theme('colors.amber.600');
+		--button-shading: var(--button-primary-shading);
 		/* computed */
 		--button-depth-current: var(--button-depth);
 		--button-box-shadow: 0 var(--button-depth-current) 0 var(--button-shading), var(--tw-shadow);
@@ -19,23 +19,13 @@
 		cursor: pointer;
 		display: inline-flex;
 		font-weight: bold;
-		gap: theme('spacing.2xs-fixed');
+		gap: var(--space-2xs-static);
 		justify-content: center;
 		margin: 0 0 var(--button-depth) 0;
 		outline: none;
 		padding: 0.25em 1em;
 		text-align: center;
 		text-decoration: none;
-	}
-
-	.button svg {
-		max-height: 1lh;
-		width: auto;
-	}
-
-	.button:where([data-color='secondary']) {
-		--button-background: theme('colors.slate.300');
-		--button-shading: theme('colors.slate.400');
 	}
 
 	.button:hover,
@@ -50,7 +40,7 @@
 	}
 
 	.button:focus {
-		--button-background: theme('colors.amber.100');
+		--button-background: var(--button-primary-background-focus);
 		outline: 2px dashed var(--color-focus-ring);
 		outline-offset: -6px;
 	}
@@ -64,5 +54,19 @@
 		opacity: 0.5;
 		mix-blend-mode: luminosity;
 		pointer-events: none;
+	}
+
+	.button:where([data-color='secondary']) {
+		--button-background: var(--button-secondary-background-default);
+		--button-shading: var(--button-secondary-shading);
+	}
+
+	.button:where([data-color='secondary']):focus {
+		--button-background: var(--button-secondary-background-focus);
+	}
+
+	.button svg {
+		max-height: 1lh;
+		width: auto;
 	}
 }

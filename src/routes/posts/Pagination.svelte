@@ -35,7 +35,7 @@
 </script>
 
 {#if count}
-	<nav class="cluster justify-center gutter-m-xl-fixed mbs-xl-2xl" aria-label="Pages">
+	<nav class="cluster justify-center gutter-m-xl-static mbs-xl-2xl" aria-label="Pages">
 		<a
 			href={`/posts/page/${Math.max(1, page - 1)}`}
 			class="button grow sm:grow-0"
@@ -44,7 +44,7 @@
 			aria-label="Previous Page"><ArrowLeft /> Prev</a
 		>
 		<!-- svelte-ignore a11y-no-redundant-roles -->
-		<ol class="hidden gutter-s-fixed md:cluster" role="list">
+		<ol class="hidden gutter-s-static md:cluster" role="list">
 			{#if !visiblePages.includes(1)}
 				<li class="hidden lg:items-end lg:cluster">
 					<a

@@ -1,3 +1,12 @@
+@layer base {
+
+	*,
+	*::before,
+	*::after {
+		--stack-space-override: var(--stack-space);
+	}
+}
+
 @layer components {
 	.stack {
 		--stack-space: 1em;
@@ -8,10 +17,6 @@
 	}
 
 	.stack > * + * {
-		margin-block-start: var(--stack-space);
-	}
-
-	.stack-inline > * + * {
-		margin-inline-start: var(--gutter);
+		margin-block-start: var(--stack-space-override);
 	}
 }

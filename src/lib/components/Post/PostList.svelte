@@ -5,7 +5,7 @@
 
 <style>
 	:global(.post-list .post-list) {
-		margin-inline-start: theme('spacing.m-l-fixed');
+		margin-inline-start: var(--space-m-l-static);
 	}
 
 	:global(.post-list :where(li > .post-list)) {
@@ -14,7 +14,7 @@
 
 	:global(.post-list > :where(li + li)),
 	:global(.post-list :where(li > .post-list)) {
-		border-block-start: 1px solid var(--color-separator);
+		border-block-start: 1px solid var(--separator-border-color);
 		padding-block-start: var(--stack-space);
 	}
 </style>

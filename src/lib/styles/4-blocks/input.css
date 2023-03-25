@@ -1,7 +1,4 @@
 .input {
-	--input-background: theme('colors.slate.50');
-	--input-border-color: theme('colors.slate.400');
-	--input-shading: theme('colors.slate.400 / 30%');
 	background-color: var(--input-background);
 	border: 2px solid var(--input-border-color);
 	border-radius: 8px;

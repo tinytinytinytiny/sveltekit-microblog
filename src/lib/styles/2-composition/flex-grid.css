@@ -1,11 +1,12 @@
-.flex-grid {
-	--_gutter: var(--gutter, var(--gutter-default));
-	display: flex;
-	flex-flow: row wrap;
-	gap: var(--_gutter);
-}
+@layer components {
+	.flex-grid {
+		display: flex;
+		flex-flow: row wrap;
+		gap: var(--gutter);
+	}
 
-.flex-grid > * {
-	flex-basis: var(--grid-min-item-size);
-	flex-grow: 1;
+	.flex-grid > * {
+		flex-basis: var(--grid-min-item-size);
+		flex-grow: 1;
+	}
 }

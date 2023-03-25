@@ -1,9 +1,9 @@
 @layer components {
 	.auto-grid {
-		--_gutter: var(--gutter, var(--gutter-default));
+		--gutter: var(--gutter, var(--gutter-default));
 		display: grid;
 		grid-template-columns: repeat(var(--grid-placement, auto-fill),
 				minmax(var(--grid-min-item-size), 1fr));
-		gap: var(--_gutter);
+		gap: var(--gutter);
 	}
 }

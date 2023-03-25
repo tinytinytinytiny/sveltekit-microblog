@@ -43,7 +43,7 @@
 	}
 
 	textarea::placeholder {
-		color: var(--color-text-secondary);
+		color: var(--input-placeholder-color);
 	}
 
 	.textarea-expander {

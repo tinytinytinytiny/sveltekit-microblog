@@ -3,11 +3,11 @@
 	import Logo from '$lib/assets/logo.svelte';
 </script>
 
-<footer class="wrapper plb-l-2xl-fixed text-step-0">
+<footer class="wrapper plb-l-2xl-static text-step-0">
 	<div class="layout-grid">
 		<section class="stack col-span-full @lg/layout-grid:col-span-4">
 			<div class="h2 inline-block relative">
-				<div class="max-w-2xl-3xl-fixed"><Logo /></div>
+				<div class="max-w-2xl-3xl-static"><Logo /></div>
 				<h2 class="text-step-2 leading-tight">
 					<a class="card-link no-underline text-bold" href="/">My Wonderful Microblog</a>
 				</h2>
@@ -15,8 +15,7 @@
 			<p class="mbs-h3-be">{`Copyright ${new Date().getFullYear()}. All rights reversed.`}</p>
 			<div class="cluster gutter-s">
 				<a class="nav-link" href="/posts">Terms</a>
-				<a class="nav-link" href="/posts">Privacy Policy</a
-				>
+				<a class="nav-link" href="/posts">Privacy Policy</a>
 			</div>
 		</section>
 		{#each navigation as section}

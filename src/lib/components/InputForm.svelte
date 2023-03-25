@@ -34,7 +34,7 @@
 	<TextBox label="Message" {id}>
 		<TextArea {id} name="post" required {placeholder} bind:value />
 		{#if !variant}
-			<div class="self-start p-xs-fixed">
+			<div class="self-start p-xs-static">
 				<Button type="submit" disabled={Boolean(!value.replace(/\s/g, ''))}>Post</Button>
 			</div>
 		{/if}

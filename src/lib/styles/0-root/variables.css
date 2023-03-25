@@ -1,6 +1,8 @@
-:root {
-	--copy-width: 65ch;
-	--gutter-default: theme('spacing.s-fixed');
-	--grid-min-item-size: 12rem;
-	--site-padding: theme('spacing.xs-xl-fixed');
+@layer base {
+	:root {
+		--copy-width: 65ch;
+		--gutter: var(--space-s-static);
+		--grid-min-item-size: 12rem;
+		--site-padding: var(--space-xs-xl-static);
+	}
 }

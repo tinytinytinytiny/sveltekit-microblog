@@ -1,6 +1,6 @@
 @layer base {
 	html {
-		scroll-padding-block-start: theme('spacing.l-xl-fixed');
+		scroll-padding-block-start: var(--space-l-xl-static);
 	}
 
 	html,
@@ -10,16 +10,16 @@
 	}
 
 	body {
-		background-color: var(--background-body);
+		background-color: var(--color-background-body);
 		color: var(--color-text-primary);
 		font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-		font-size: theme('fontSize.step-1');
+		font-size: var(--text-step-1);
 		line-height: 1.5;
 	}
 
 	.layout {
 		--layout-columns: 12;
-		--layout-gutter: theme('spacing.s-l-fixed');
+		--layout-gutter: var(--space-s-l-static);
 		--layout-max-width: theme('containers.2xl');
 		--layout-outer-width: calc(2 * var(--layout-gutter) + var(--layout-max-width));
 		--layout-column-width: calc((var(--layout-max-width) - (var(--layout-columns) - 1) * var(--layout-gutter)) / var(--layout-columns));

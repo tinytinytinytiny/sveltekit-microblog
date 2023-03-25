@@ -23,11 +23,11 @@
 	}
 
 	header:hover + :global(*) {
-		background-color: theme('colors.slate.200');
+		background-color: var(--post-background-hover);
 	}
 
 	header:focus-within + :global(*) {
-		background-color: theme('colors.amber.100');
+		background-color: var(--post-background-focus);
 		outline: 2px dashed var(--color-focus-ring);
 		outline-offset: 2px;
 	}

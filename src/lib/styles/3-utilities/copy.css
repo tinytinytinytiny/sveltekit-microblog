@@ -1,54 +1,42 @@
 @layer components {
 	.copy {
-		--stack-space: theme('spacing.m');
+		--stack-space: var(--space-m);
 	}
 
 	.copy > :where(figure, figure + *, hr, hr + *) {
-		--modified-stack-space: theme('spacing.l-xl');
+		--stack-space-override: var(--space-l-xl);
 	}
 
 	.copy > :where(aside, aside + *) {
-		--modified-stack-space: theme('spacing.l');
-	}
-
-	.copy > :where(aside, figure, hr) {
-		--stack-space: var(--modified-stack-space);
-	}
-
-	.copy > :where(aside, figure, hr):not(:last-child) {
-		margin-block-end: var(--modified-stack-space);
-	}
-
-	:where(.copy > aside, .copy > figure) > * {
-		--stack-space: theme('spacing.m');
+		--stack-space-override: var(--space-l);
 	}
 
 	.copy > :where(h2) {
-		--stack-space: var(--margin-top-h2);
+		--stack-space-override: var(--margin-top-h2);
 	}
 
 	.copy > :where(h3) {
-		--stack-space: var(--margin-top-h3);
+		--stack-space-override: var(--margin-top-h3);
 	}
 
 	.copy > :where(h4) {
-		--stack-space: var(--margin-top-h4);
+		--stack-space-override: var(--margin-top-h4);
 	}
 
 	.copy > :where(h2 + *) {
-		margin-block-start: var(--margin-bottom-h2);
+		--stack-space-override: var(--margin-bottom-h2);
 	}
 
 	.copy > :where(h3 + *) {
-		margin-block-start: var(--margin-bottom-h3);
+		--stack-space-override: var(--margin-bottom-h3);
 	}
 
 	.copy > :where(h4 + *) {
-		margin-block-start: var(--margin-bottom-h4);
+		--stack-space-override: var(--margin-bottom-h4);
 	}
 
 	.copy > ul:not([class]) > li + li,
 	.copy > ol:not([class]) > li + li {
-		margin-block-start: theme('spacing.2xs');
+		--stack-space-override: var(--space-2xs);
 	}
 }
