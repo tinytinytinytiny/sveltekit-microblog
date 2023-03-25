@@ -20,6 +20,7 @@
 
 	.post-body :global(p) {
 		overflow-wrap: break-word;
+		word-break: break-word;
 	}
 
 	.post-body :global(p:has(img)) {
