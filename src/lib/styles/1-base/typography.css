@@ -55,7 +55,7 @@
 		border: none;
 		box-shadow: inset 0 calc(-1 * var(--link-underline-thickness-focus)) 0 currentColor;
 		color: inherit;
-		outline: 2px dashed var(--color-focus-ring);
+		outline: var(--focus-ring-outline);
 		outline-offset: 2px;
 		text-decoration: none;
 	}

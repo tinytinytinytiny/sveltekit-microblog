@@ -41,7 +41,7 @@
 
 	.button:focus {
 		--button-background: var(--button-primary-background-focus);
-		outline: 2px dashed var(--color-focus-ring);
+		outline: var(--focus-ring-outline);
 		outline-offset: -6px;
 	}
 

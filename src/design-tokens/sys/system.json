@@ -1,0 +1,19 @@
+{
+	"focus-ring": {
+		"outline": "2px dashed var(--palette-amber-600)",
+		"outline-offset": "3px"
+	},
+	"link": {
+		"background": {
+			"focus": "var(--palette-amber-200)"
+		},
+		"color": {
+			"default": "var(--palette-blue-700)",
+			"hover": "var(--palette-blue-900)"
+		},
+		"underline-thickness": {
+			"default": "2px",
+			"focus": "3px"
+		}
+	}
+}

@@ -28,7 +28,7 @@
 
 	header:focus-within + :global(*) {
 		background-color: var(--post-background-focus);
-		outline: 2px dashed var(--color-focus-ring);
+		outline: var(--focus-ring-outline);
 		outline-offset: 2px;
 	}
 

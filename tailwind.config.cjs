@@ -5,6 +5,7 @@ const fontSize = require('./src/design-tokens/ref/font-sizes.cjs');
 const spacing = require('./src/design-tokens/ref/spacing.cjs');
 const palette = require('./src/design-tokens/ref/color-palette.json');
 const colors = require('./src/design-tokens/sys/colors.json');
+const system = require('./src/design-tokens/sys/system.json');
 const components = require('./src/design-tokens/comp/components.json');
 const customUtilities = require('./src/design-tokens/custom-utilities.json');
 
@@ -75,6 +76,7 @@ module.exports = {
 				space: spacing,
 				text: fontSize,
 				color: colors,
+				...system,
 				...components
 			}
 		}

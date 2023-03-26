@@ -10,7 +10,7 @@
 
 <style>
 	.input:global(:has(textarea:focus)) {
-		outline: 2px dashed var(--color-focus-ring);
-		outline-offset: 3px;
+		outline: var(--focus-ring-outline);
+		outline-offset: var(--focus-ring-outline-offset);
 	}
 </style>
