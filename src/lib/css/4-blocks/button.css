@@ -1,6 +1,6 @@
 @layer components {
 	.button {
-		--button-background: var(--button-primary-background-default);
+		--button-background: var(--button-primary-background);
 		--button-color: var(--color-text-strong);
 		--button-depth: 0.3em;
 		--button-depth-hover: 0.15em;
@@ -40,7 +40,7 @@
 	}
 
 	.button:focus {
-		--button-background: var(--button-primary-background-focus);
+		--button-background: var(--color-focus-background);
 		outline: var(--focus-outline);
 		outline-offset: -6px;
 	}
@@ -57,7 +57,7 @@
 	}
 
 	.button:where([data-color='secondary']) {
-		--button-background: var(--button-secondary-background-default);
+		--button-background: var(--button-secondary-background);
 		--button-shading: var(--button-secondary-shading);
 	}
 

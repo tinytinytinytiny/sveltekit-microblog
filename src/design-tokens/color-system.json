@@ -1,18 +1,28 @@
 {
 	"background": {
 		"body": "#fff",
-		"surface": "var(--color-neutral-100)"
+		"surface": {
+			"1": "var(--color-neutral-50)",
+			"2": "var(--color-neutral-100)",
+			"3": "var(--color-neutral-200)"
+		}
 	},
 	"text": {
-		"normal": "#050810",
+		"weakest": "var(--color-neutral-500)",
 		"weak": "var(--color-neutral-600)",
+		"normal": "#050810",
 		"strong": "#050810"
 	},
 	"focus": {
 		"background": "var(--color-accent-100)",
 		"ring": "var(--color-accent-600)"
 	},
-	"hover": {
-		"background": "var(--color-neutral-200)"
+	"link": {
+		"default": "var(--palette-blue-700)",
+		"hover": "var(--palette-blue-900)"
+	},
+	"separator": {
+		"normal": "var(--color-neutral-300)",
+		"strong": "var(--color-neutral-400)"
 	}
 }

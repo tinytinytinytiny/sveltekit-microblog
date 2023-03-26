@@ -18,7 +18,7 @@
 
 	:global(.post-list > :where(li + li)),
 	:global(.post-list :where(li > .post-list)) {
-		border-block-start: 1px solid var(--separator-border-color);
+		border-block-start: 1px solid var(--color-separator-normal);
 		padding-block-start: var(--stack-space);
 	}
 </style>

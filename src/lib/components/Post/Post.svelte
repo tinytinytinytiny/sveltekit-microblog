@@ -23,7 +23,7 @@
 	}
 
 	header:hover + :global(*) {
-		background-color: var(--color-hover-background);
+		background-color: var(--color-background-surface-3);
 	}
 
 	header:focus-within + :global(*) {

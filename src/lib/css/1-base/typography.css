@@ -59,13 +59,13 @@
 	a {
 		--link-underline-thickness-default: 2px;
 		--link-underline-thickness-focus: 3px;
-		color: var(--link-color-default);
+		color: var(--color-link-default);
 		font-weight: 700;
 		text-decoration-thickness: var(--link-underline-thickness-default);
 	}
 
 	a:where(:hover) {
-		color: var(--link-color-hover);
+		color: var(--color-link-hover);
 	}
 
 	a:where(.card-link)::before {

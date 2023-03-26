@@ -13,7 +13,7 @@
 <style>
 	.wrapper {
 		--wrapper-content-width: calc(6 * var(--layout-span) - var(--layout-gutter));
-		background-color: var(--color-background-surface);
+		background-color: var(--color-background-surface-2);
 		padding-block: var(--space-l-xl-static) var(--space-xl-2xl-static);
 	}
 </style>
