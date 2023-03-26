@@ -1,0 +1,10 @@
+{
+	"spacing": {
+		"h2-bs": "var(--copy-margin-start-h2)",
+		"h2-be": "var(--copy-margin-end-h2)",
+		"h3-bs": "var(--copy-margin-start-h3)",
+		"h3-be": "var(--copy-margin-end-h3)",
+		"h4-bs": "var(--copy-margin-start-h4)",
+		"h4-be": "var(--copy-margin-end-h4)"
+	}
+}

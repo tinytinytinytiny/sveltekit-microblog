@@ -36,11 +36,11 @@
 
 <style>
 	footer > .layout-grid {
-		grid-row-gap: var(--margin-top-h4);
+		grid-row-gap: var(--copy-margin-start-h4);
 	}
 
 	.nav-link {
-		--link-underline-thickness: auto;
+		--link-underline-thickness-default: auto;
 		--link-underline-thickness-focus: 2px;
 		color: var(--color-text-primary);
 		font-weight: normal;

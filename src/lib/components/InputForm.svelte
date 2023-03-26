@@ -1,7 +1,6 @@
 <script>
 	import { applyAction, enhance } from '$app/forms';
 	import { invalidateAll } from '$app/navigation';
-	import { generateSlug } from 'random-word-slugs';
 	import TextBox from '$lib/components/TextBox.svelte';
 	import TextArea from '$lib/components/TextArea.svelte';
 	import Button from '$lib/components/Button.svelte';
@@ -12,7 +11,7 @@
 	export let variant = null;
 
 	let value = '';
-	const id = generateSlug();
+	const id = crypto.randomUUID();
 </script>
 
 <form

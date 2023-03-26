@@ -1,0 +1,12 @@
+{
+	"background": {
+		"body": "#fff",
+		"surface": "var(--palette-slate-100)"
+	},
+	"text": {
+		"primary": "#050810",
+		"secondary": "var(--palette-slate-600)",
+		"bold": "#050810"
+	},
+	"focus-ring": "var(--palette-amber-600)"
+}

@@ -61,10 +61,6 @@
 		--button-shading: var(--button-secondary-shading);
 	}
 
-	.button:where([data-color='secondary']):focus {
-		--button-background: var(--button-secondary-background-focus);
-	}
-
 	.button svg {
 		max-height: 1lh;
 		width: auto;

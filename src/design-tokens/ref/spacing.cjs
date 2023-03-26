@@ -40,27 +40,27 @@ Created by James Gilyead & Trys Mud
 `;
 
 const tokens = {
-  '0': '0'
+	'0': '0'
 };
 
 css.split('{')[1].split('}')[0].split(';')
-  .map(x =>
-    x
-      .replace(/\/\*((?!\*\/).|\n)+\*\/+/g, '')
-      .trim()
-      .replace('--space-', '')
-  )
-  .filter(x => x)
-  .forEach((x) => {
-    const [key, value] = x.split(': ');
-    tokens[key] = value;
-    tokens[`${key}-static`] = remToPx(value);
-  });
+	.map(x =>
+		x
+			.replace(/\/\*((?!\*\/).|\n)+\*\/+/g, '')
+			.trim()
+			.replace('--space-', '')
+	)
+	.filter(x => x)
+	.forEach((x) => {
+		const [key, value] = x.split(': ');
+		tokens[key] = value;
+		tokens[`${key}-static`] = remToPx(value);
+	});
 
 function remToPx(string) {
-  const matchRem = new RegExp(/[+-]?(\d*|\d{1,3}(,\d{3})*)(\.\d+)?(rem)/, 'g');
-  const convertToPx = (x) => `${Math.round(Number(x.split('rem')[0]) * 16)}px`;
-  return string.replaceAll(matchRem, convertToPx);
+	const matchRem = new RegExp(/[+-]?(\d*|\d{1,3}(,\d{3})*)(\.\d+)?(rem)/, 'g');
+	const convertToPx = (x) => `${Math.round(Number(x.split('rem')[0]) * 16)}px`;
+	return string.replaceAll(matchRem, convertToPx);
 }
 
 module.exports = tokens;

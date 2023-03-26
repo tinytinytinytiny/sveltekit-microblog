@@ -1,34 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require('tailwindcss/plugin');
 
-const colors = {
-	global: require('./src/design-tokens/color-palette.json'),
-	semantic: require('./src/design-tokens/color-semantic.json')
-};
-const fontSize = require('./src/design-tokens/font-sizes.cjs');
-const spacing = require('./src/design-tokens/spacing.cjs');
-const components = require('./src/design-tokens/components.json');
-const headingMargins = aliasedTokens(require('./src/design-tokens/heading-margins.json'));
+const fontSize = require('./src/design-tokens/ref/font-sizes.cjs');
+const spacing = require('./src/design-tokens/ref/spacing.cjs');
+const palette = require('./src/design-tokens/ref/color-palette.json');
+const colors = require('./src/design-tokens/sys/colors.json');
+const components = require('./src/design-tokens/comp/components.json');
+const customUtilities = require('./src/design-tokens/custom-utilities.json');
 
 function tokens(tokens, prefix = '') {
 	return Object
 		.keys(tokens)
 		.reduce((a, v) => ({ ...a, [v]: `var(--${[prefix, v].filter(x => x.length).join('-')})` }), {});
-}
-
-function aliasedTokens(tokens) {
-	return {
-		theme: Object.fromEntries(
-			Object
-				.entries(tokens)
-				.map(([key, { alias }]) => [alias, `var(--${key})`])
-		),
-		variables: Object.fromEntries(
-			Object
-				.entries(tokens)
-				.map(([key, value]) => [key, value.value || value])
-		)
-	};
 }
 
 module.exports = {
@@ -49,13 +32,13 @@ module.exports = {
 			'2xl': '94rem'
 		},
 		colors: Object.fromEntries(
-			Object.entries(colors.global)
+			Object.entries(palette)
 				.map(([color, steps]) => [
 					color,
 					Object.fromEntries(
 						Object.entries(steps).map(([step]) => [
 							step,
-							`var(--color-${color}-${step})`
+							`var(--palette-${color}-${step})`
 						])
 					)
 				])
@@ -63,7 +46,7 @@ module.exports = {
 		fontSize: tokens(fontSize, 'text'),
 		spacing: {
 			...tokens(spacing, 'space'),
-			...headingMargins.theme
+			...customUtilities.spacing
 		},
 		margin: ({ theme }) => ({
 			auto: 'auto',
@@ -71,8 +54,8 @@ module.exports = {
 		}),
 		padding: ({ theme }) => theme('spacing'),
 		extend: {
-			backgroundColor: tokens(colors.semantic.background, 'color-background'),
-			textColor: tokens(colors.semantic.text, 'color-text'),
+			backgroundColor: tokens(colors.background, 'color-background'),
+			textColor: tokens(colors.text, 'color-text'),
 			maxWidth: {
 				copy: 'var(--copy-width)',
 				...tokens(spacing, 'space')
@@ -88,13 +71,10 @@ module.exports = {
 		},
 		variables: {
 			DEFAULT: {
-				color: {
-					...colors.global,
-					...colors.semantic
-				},
+				palette,
 				space: spacing,
 				text: fontSize,
-				...headingMargins.variables,
+				color: colors,
 				...components
 			}
 		}

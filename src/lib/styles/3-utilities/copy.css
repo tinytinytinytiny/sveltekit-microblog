@@ -1,3 +1,14 @@
+@layer base {
+	:root {
+		--copy-margin-start-h2: var(--space-xl-2xl);
+		--copy-margin-end-h2: var(--space-s);
+		--copy-margin-start-h3: var(--space-l-xl);
+		--copy-margin-end-h3: var(--space-xs);
+		--copy-margin-start-h4: var(--space-l);
+		--copy-margin-end-h4: var(--space-2xs-xs);
+	}
+}
+
 @layer components {
 	.copy {
 		--stack-space: var(--space-m);
@@ -12,27 +23,27 @@
 	}
 
 	.copy > :where(h2) {
-		--stack-space-override: var(--margin-top-h2);
+		--stack-space-override: var(--copy-margin-start-h2);
 	}
 
 	.copy > :where(h3) {
-		--stack-space-override: var(--margin-top-h3);
+		--stack-space-override: var(--copy-margin-start-h3);
 	}
 
 	.copy > :where(h4) {
-		--stack-space-override: var(--margin-top-h4);
+		--stack-space-override: var(--copy-margin-start-h4);
 	}
 
 	.copy > :where(h2 + *) {
-		--stack-space-override: var(--margin-bottom-h2);
+		--stack-space-override: var(--copy-margin-end-h2);
 	}
 
 	.copy > :where(h3 + *) {
-		--stack-space-override: var(--margin-bottom-h3);
+		--stack-space-override: var(--copy-margin-end-h3);
 	}
 
 	.copy > :where(h4 + *) {
-		--stack-space-override: var(--margin-bottom-h4);
+		--stack-space-override: var(--copy-margin-end-h4);
 	}
 
 	.copy > ul:not([class]) > li + li,

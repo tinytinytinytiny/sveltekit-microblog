@@ -36,7 +36,7 @@
 	a {
 		color: var(--link-color-default);
 		font-weight: bold;
-		text-decoration-thickness: var(--link-underline-thickness);
+		text-decoration-thickness: var(--link-underline-thickness-default);
 		text-underline-position: from-font;
 	}
 
