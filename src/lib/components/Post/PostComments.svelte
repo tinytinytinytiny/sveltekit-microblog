@@ -19,6 +19,6 @@
 			</li>
 		{/each}
 	{:else}
-		<p class="text-secondary">Be the first to comment!</p>
+		<p class="text-weak">Be the first to comment!</p>
 	{/if}
 </PostList>

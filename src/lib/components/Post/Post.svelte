@@ -23,12 +23,12 @@
 	}
 
 	header:hover + :global(*) {
-		background-color: var(--post-background-hover);
+		background-color: var(--color-hover-background);
 	}
 
 	header:focus-within + :global(*) {
-		background-color: var(--post-background-focus);
-		outline: var(--focus-ring-outline);
+		background-color: var(--color-focus-background);
+		outline: var(--focus-outline);
 		outline-offset: 2px;
 	}
 

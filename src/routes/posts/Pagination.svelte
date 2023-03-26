@@ -55,7 +55,7 @@
 					>
 						1
 					</a>
-					<span class="aria-hidden text-secondary">…</span>
+					<span class="aria-hidden text-weak">…</span>
 				</li>
 			{/if}
 			{#each visiblePages as num}
@@ -73,7 +73,7 @@
 			{/each}
 			{#if !visiblePages.includes(count)}
 				<li class="hidden lg:items-end lg:cluster">
-					<span class="aria-hidden text-secondary">…</span>
+					<span class="aria-hidden text-weak">…</span>
 					<a
 						href={`/posts/page/${count}`}
 						class="button"

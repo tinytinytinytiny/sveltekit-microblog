@@ -3,6 +3,7 @@ const plugin = require('tailwindcss/plugin');
 
 const fontSize = require('./src/design-tokens/font-sizes.cjs');
 const spacing = require('./src/design-tokens/spacing.cjs');
+const lineHeight = require('./src/design-tokens/line-height.json');
 const colors = {
 	palette: require('./src/design-tokens/color-palette.json'),
 	semanticPalette: require('./src/design-tokens/color-semantic-palette.json'),
@@ -47,6 +48,7 @@ module.exports = {
 				])
 		),
 		fontSize: tokens(fontSize, 'text'),
+		lineHeight: tokens(lineHeight, 'leading'),
 		spacing: {
 			...tokens(spacing, 'space'),
 			...customUtilities.spacing
@@ -81,6 +83,7 @@ module.exports = {
 					...colors.semanticPalette,
 					...colors.system
 				},
+				leading: lineHeight,
 				...colors.components
 			}
 		}

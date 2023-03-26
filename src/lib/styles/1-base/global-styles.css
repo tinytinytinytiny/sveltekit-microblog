@@ -11,10 +11,10 @@
 
 	body {
 		background-color: var(--color-background-body);
-		color: var(--color-text-primary);
+		color: var(--color-text-normal);
 		font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
 		font-size: var(--text-step-1);
-		line-height: 1.5;
+		line-height: var(--leading-m);
 	}
 
 	.layout {

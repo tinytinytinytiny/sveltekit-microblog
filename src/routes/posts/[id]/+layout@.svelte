@@ -12,8 +12,8 @@
 			<header class="mbs-l-xl">
 				<h1>{`Post #${data.id}`}</h1>
 				{#if data.parentId}
-					<p class="text-secondary text-step-0 mbs-2xs">
-						Reply to <a class="text-inherit focus:text-primary" href={`/posts/${data.parentId}`}
+					<p class="text-weak text-step-0 mbs-2xs">
+						Reply to <a class="text-inherit focus:text-normal" href={`/posts/${data.parentId}`}
 							>{`post #${data.parentId}`}</a
 						>
 					</p>

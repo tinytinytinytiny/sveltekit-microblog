@@ -6,10 +6,10 @@
 <footer class="wrapper plb-l-2xl-static text-step-0">
 	<div class="layout-grid">
 		<section class="stack col-span-full @lg/layout-grid:col-span-4">
-			<div class="h2 inline-block relative">
+			<div class="inline-block relative">
 				<div class="max-w-2xl-3xl-static"><Logo /></div>
-				<h2 class="text-step-2 leading-tight">
-					<a class="card-link no-underline text-bold" href="/">My Wonderful Microblog</a>
+				<h2 class="h3">
+					<a class="card-link no-underline text-strong" href="/">My Wonderful Microblog</a>
 				</h2>
 			</div>
 			<p class="mbs-h3-be">{`Copyright ${new Date().getFullYear()}. All rights reversed.`}</p>
@@ -20,9 +20,9 @@
 		</section>
 		{#each navigation as section}
 			<section class="stack copy">
-				<h3 class="text-step-1">{section.title}</h3>
+				<h3 class="h4">{section.title}</h3>
 				<!-- svelte-ignore a11y-no-redundant-roles -->
-				<ul class="stack stack-space-xs mbs-h4-be" role="list">
+				<ul class="stack stack-space-xs" role="list">
 					{#each section.links as link}
 						<li>
 							<a class="nav-link" href="/posts">{link}</a>
@@ -42,7 +42,7 @@
 	.nav-link {
 		--link-underline-thickness-default: auto;
 		--link-underline-thickness-focus: 2px;
-		color: var(--color-text-primary);
+		color: var(--color-text-normal);
 		font-weight: normal;
 	}
 </style>

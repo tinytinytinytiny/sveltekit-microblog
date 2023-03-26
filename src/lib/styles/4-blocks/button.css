@@ -1,7 +1,7 @@
 @layer components {
 	.button {
 		--button-background: var(--button-primary-background-default);
-		--button-color: var(--color-text-bold);
+		--button-color: var(--color-text-strong);
 		--button-depth: 0.3em;
 		--button-depth-hover: 0.15em;
 		--button-depth-active: 0em;
@@ -18,7 +18,7 @@
 		color: var(--button-color);
 		cursor: pointer;
 		display: inline-flex;
-		font-weight: bold;
+		font-weight: 700;
 		gap: var(--space-2xs-static);
 		justify-content: center;
 		margin: 0 0 var(--button-depth) 0;
@@ -41,7 +41,7 @@
 
 	.button:focus {
 		--button-background: var(--button-primary-background-focus);
-		outline: var(--focus-ring-outline);
+		outline: var(--focus-outline);
 		outline-offset: -6px;
 	}
 

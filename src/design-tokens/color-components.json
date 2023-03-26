@@ -25,18 +25,9 @@
 		"shading": "var(--color-neutral-300)"
 	},
 	"link": {
-		"background": {
-			"focus": "var(--color-accent-200)"
-		},
 		"color": {
 			"default": "var(--palette-blue-700)",
 			"hover": "var(--palette-blue-900)"
-		}
-	},
-	"post": {
-		"background": {
-			"hover": "var(--color-neutral-200)",
-			"focus": "var(--color-accent-100)"
 		}
 	},
 	"separator": {

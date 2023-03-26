@@ -22,27 +22,27 @@
 		--stack-space-override: var(--space-l);
 	}
 
-	.copy > :where(h2) {
+	.copy > :where(h2, .h2) {
 		--stack-space-override: var(--copy-margin-start-h2);
 	}
 
-	.copy > :where(h3) {
+	.copy > :where(h3, .h3) {
 		--stack-space-override: var(--copy-margin-start-h3);
 	}
 
-	.copy > :where(h4) {
+	.copy > :where(h4, .h4) {
 		--stack-space-override: var(--copy-margin-start-h4);
 	}
 
-	.copy > :where(h2 + *) {
+	.copy > :where(h2 + *, .h2 + *) {
 		--stack-space-override: var(--copy-margin-end-h2);
 	}
 
-	.copy > :where(h3 + *) {
+	.copy > :where(h3 + *, .h3 + *) {
 		--stack-space-override: var(--copy-margin-end-h3);
 	}
 
-	.copy > :where(h4 + *) {
+	.copy > :where(h4 + *, .h4 + *) {
 		--stack-space-override: var(--copy-margin-end-h4);
 	}
 

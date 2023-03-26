@@ -34,7 +34,7 @@
 	a:focus {
 		background-color: transparent;
 		box-shadow: none;
-		color: var(--color-text-primary);
+		color: var(--color-text-normal);
 		text-decoration-color: currentColor;
 	}
 </style>

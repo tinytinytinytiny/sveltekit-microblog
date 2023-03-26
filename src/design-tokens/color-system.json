@@ -4,9 +4,15 @@
 		"surface": "var(--color-neutral-100)"
 	},
 	"text": {
-		"primary": "#050810",
-		"secondary": "var(--color-neutral-600)",
-		"bold": "#050810"
+		"normal": "#050810",
+		"weak": "var(--color-neutral-600)",
+		"strong": "#050810"
 	},
-	"focus-ring": "var(--color-accent-600)"
+	"focus": {
+		"background": "var(--color-accent-100)",
+		"ring": "var(--color-accent-600)"
+	},
+	"hover": {
+		"background": "var(--color-neutral-200)"
+	}
 }
