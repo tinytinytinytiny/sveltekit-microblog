@@ -44,7 +44,7 @@
 			aria-label="Previous Page"><ArrowLeft /> Prev</a
 		>
 		<!-- svelte-ignore a11y-no-redundant-roles -->
-		<ol class="hidden gutter-s-static md:cluster" role="list">
+		<ol class="hidden md:cluster" role="list">
 			{#if !visiblePages.includes(1)}
 				<li class="hidden lg:items-end lg:cluster">
 					<a

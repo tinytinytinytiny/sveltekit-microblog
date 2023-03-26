@@ -1,5 +1,6 @@
 @layer components {
 	.cluster {
+		--gutter: var(--default-gutter);
 		align-items: center;
 		display: flex;
 		flex-wrap: wrap;

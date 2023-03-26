@@ -1,6 +1,7 @@
 @layer components {
 	.auto-grid {
-		--gutter: var(--gutter, var(--gutter-default));
+		--grid-min-item-size: var(--default-grid-min-item-size);
+		--gutter: var(--default-gutter);
 		display: grid;
 		grid-template-columns: repeat(var(--grid-placement, auto-fill),
 				minmax(var(--grid-min-item-size), 1fr));

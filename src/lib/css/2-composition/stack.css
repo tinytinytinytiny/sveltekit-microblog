@@ -9,11 +9,7 @@
 
 @layer components {
 	.stack {
-		--stack-space: 1em;
-	}
-
-	.stack-inline {
-		--gutter: 1em;
+		--stack-space: var(--default-stack-space);
 	}
 
 	.stack > * + * {

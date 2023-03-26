@@ -1,5 +1,5 @@
 <script>
-	import '$lib/styles/global.css';
+	import '$lib/css/global.css';
 	import SkipLink from './SkipLink.svelte';
 	import Footer from './Footer.svelte';
 </script>

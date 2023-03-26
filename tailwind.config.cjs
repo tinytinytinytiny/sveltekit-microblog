@@ -60,6 +60,10 @@ module.exports = {
 		padding: ({ theme }) => theme('spacing'),
 		extend: {
 			backgroundColor: tokens(colors.system.background, 'color-background'),
+			colors: ({ colors }) => ({
+				current: colors.current,
+				inherit: colors.inherit
+			}),
 			textColor: tokens(colors.system.text, 'color-text'),
 			maxWidth: {
 				copy: 'var(--copy-width)',

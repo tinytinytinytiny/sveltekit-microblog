@@ -1,5 +1,7 @@
 @layer components {
 	.flex-grid {
+		--grid-min-item-size: var(--default-grid-min-item-size);
+		--gutter: var(--default-gutter);
 		display: flex;
 		flex-flow: row wrap;
 		gap: var(--gutter);

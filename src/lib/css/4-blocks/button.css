@@ -23,7 +23,7 @@
 		justify-content: center;
 		margin: 0 0 var(--button-depth) 0;
 		outline: none;
-		padding: 0.25em 1em;
+		padding: 0.25em 0.9em;
 		text-align: center;
 		text-decoration: none;
 	}

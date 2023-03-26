@@ -22,5 +22,5 @@
 	<form action={`/posts/${data.id}`}>
 		<Button color="secondary" type="submit">Cancel</Button>
 	</form>
-	<Button className="grow sm:grow-0" type="submit" form="edit">Save</Button>
+	<Button className="grow sm:grow-0" type="submit" form="edit">Save Changes</Button>
 </footer>
