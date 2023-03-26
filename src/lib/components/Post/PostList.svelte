@@ -1,9 +1,13 @@
 <!-- svelte-ignore a11y-no-redundant-roles -->
-<ul class="post-list stack stack-space-m" role="list">
+<ul class="post-list stack" role="list">
 	<slot />
 </ul>
 
 <style>
+	.post-list {
+		--stack-space: var(--space-m-l-static);
+	}
+
 	:global(.post-list .post-list) {
 		margin-inline-start: var(--space-m-l-static);
 	}

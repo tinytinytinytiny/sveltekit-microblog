@@ -1,6 +1,8 @@
 @layer base {
 	:root {
 		--copy-width: 65ch;
+		--focus-ring-outline: 2px dashed var(--color-focus-ring);
+		--focus-ring-outline-offset: 3px;
 		--gutter: var(--space-s-static);
 		--grid-min-item-size: 12rem;
 		--site-padding: var(--space-xs-xl-static);

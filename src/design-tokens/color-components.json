@@ -1,0 +1,45 @@
+{
+	"button": {
+		"primary": {
+			"background": {
+				"default": "var(--color-accent-300)",
+				"focus": "var(--color-accent-100)"
+			},
+			"shading": "var(--color-accent-600)"
+		},
+		"secondary": {
+			"background": {
+				"default": "var(--color-neutral-300)"
+			},
+			"shading": "var(--color-neutral-400)"
+		}
+	},
+	"header": {
+		"color": "var(--color-neutral-500)",
+		"underline-color": "var(--color-neutral-400)"
+	},
+	"input": {
+		"background": "var(--color-neutral-50)",
+		"border-color": "var(--color-neutral-400)",
+		"placeholder-color": "var(--color-neutral-500)",
+		"shading": "var(--color-neutral-300)"
+	},
+	"link": {
+		"background": {
+			"focus": "var(--color-accent-200)"
+		},
+		"color": {
+			"default": "var(--palette-blue-700)",
+			"hover": "var(--palette-blue-900)"
+		}
+	},
+	"post": {
+		"background": {
+			"hover": "var(--color-neutral-200)",
+			"focus": "var(--color-accent-100)"
+		}
+	},
+	"separator": {
+		"border-color": "var(--color-neutral-300)"
+	}
+}

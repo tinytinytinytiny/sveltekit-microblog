@@ -5,7 +5,7 @@
 	export let content;
 </script>
 
-<article id={`post-${id}`} class="stack copy">
+<article id={`post-${id}`} class="stack stack-space-m">
 	<div class="relative">
 		<header>
 			<a class="card-link" href={`/posts/${id}/`}>

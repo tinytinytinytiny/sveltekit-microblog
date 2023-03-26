@@ -11,7 +11,7 @@
 
 @layer components {
 	.copy {
-		--stack-space: var(--space-m);
+		--stack-space: var(--space-m-l);
 	}
 
 	.copy > :where(figure, figure + *, hr, hr + *) {

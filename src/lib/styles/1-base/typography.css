@@ -1,4 +1,7 @@
 @layer base {
+	* {
+		text-underline-position: from-font;
+	}
 
 	blockquote,
 	figcaption,
@@ -34,10 +37,11 @@
 	}
 
 	a {
+		--link-underline-thickness-default: 2px;
+		--link-underline-thickness-focus: 3px;
 		color: var(--link-color-default);
 		font-weight: bold;
 		text-decoration-thickness: var(--link-underline-thickness-default);
-		text-underline-position: from-font;
 	}
 
 	a:where(:hover) {

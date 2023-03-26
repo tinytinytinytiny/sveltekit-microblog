@@ -1,12 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require('tailwindcss/plugin');
 
-const fontSize = require('./src/design-tokens/ref/font-sizes.cjs');
-const spacing = require('./src/design-tokens/ref/spacing.cjs');
-const palette = require('./src/design-tokens/ref/color-palette.json');
-const colors = require('./src/design-tokens/sys/colors.json');
-const system = require('./src/design-tokens/sys/system.json');
-const components = require('./src/design-tokens/comp/components.json');
+const fontSize = require('./src/design-tokens/font-sizes.cjs');
+const spacing = require('./src/design-tokens/spacing.cjs');
+const colors = {
+	palette: require('./src/design-tokens/color-palette.json'),
+	semanticPalette: require('./src/design-tokens/color-semantic-palette.json'),
+	system: require('./src/design-tokens/color-system.json'),
+	components: require('./src/design-tokens/color-components.json')
+};
 const customUtilities = require('./src/design-tokens/custom-utilities.json');
 
 function tokens(tokens, prefix = '') {
@@ -33,13 +35,13 @@ module.exports = {
 			'2xl': '94rem'
 		},
 		colors: Object.fromEntries(
-			Object.entries(palette)
+			Object.entries(colors.semanticPalette)
 				.map(([color, steps]) => [
 					color,
 					Object.fromEntries(
 						Object.entries(steps).map(([step]) => [
 							step,
-							`var(--palette-${color}-${step})`
+							`var(--color-${color}-${step})`
 						])
 					)
 				])
@@ -55,8 +57,8 @@ module.exports = {
 		}),
 		padding: ({ theme }) => theme('spacing'),
 		extend: {
-			backgroundColor: tokens(colors.background, 'color-background'),
-			textColor: tokens(colors.text, 'color-text'),
+			backgroundColor: tokens(colors.system.background, 'color-background'),
+			textColor: tokens(colors.system.text, 'color-text'),
 			maxWidth: {
 				copy: 'var(--copy-width)',
 				...tokens(spacing, 'space')
@@ -72,12 +74,14 @@ module.exports = {
 		},
 		variables: {
 			DEFAULT: {
-				palette,
 				space: spacing,
 				text: fontSize,
-				color: colors,
-				...system,
-				...components
+				palette: colors.palette,
+				color: {
+					...colors.semanticPalette,
+					...colors.system
+				},
+				...colors.components
 			}
 		}
 	},
