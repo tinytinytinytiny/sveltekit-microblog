@@ -57,11 +57,11 @@
 	}
 
 	a {
-		--link-underline-thickness-default: 2px;
+		--link-underline-thickness: 2px;
 		--link-underline-thickness-focus: 3px;
-		color: var(--color-link-default);
+		color: var(--color-link);
 		font-weight: 700;
-		text-decoration-thickness: var(--link-underline-thickness-default);
+		text-decoration-thickness: var(--link-underline-thickness);
 	}
 
 	a:where(:hover) {

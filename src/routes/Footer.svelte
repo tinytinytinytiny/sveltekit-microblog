@@ -40,7 +40,7 @@
 	}
 
 	.nav-link {
-		--link-underline-thickness-default: auto;
+		--link-underline-thickness: auto;
 		--link-underline-thickness-focus: 2px;
 		color: var(--color-text-normal);
 		font-weight: normal;

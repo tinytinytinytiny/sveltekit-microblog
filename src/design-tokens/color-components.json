@@ -5,7 +5,7 @@
 			"shading": "var(--color-accent-600)"
 		},
 		"secondary": {
-			"background": "var(--color-separator-normal)",
+			"background": "var(--color-separator)",
 			"shading": "var(--color-separator-strong)"
 		}
 	},
@@ -17,6 +17,6 @@
 		"background": "var(--color-background-surface-1)",
 		"border-color": "var(--color-separator-strong)",
 		"placeholder-color": "var(--color-text-weakest)",
-		"shading": "var(--color-separator-normal)"
+		"shading": "var(--color-separator)"
 	}
 }

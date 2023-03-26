@@ -18,11 +18,11 @@
 		"ring": "var(--color-accent-600)"
 	},
 	"link": {
-		"default": "var(--palette-blue-700)",
+		"DEFAULT": "var(--palette-blue-700)",
 		"hover": "var(--palette-blue-900)"
 	},
 	"separator": {
-		"normal": "var(--color-neutral-300)",
+		"DEFAULT": "var(--color-neutral-300)",
 		"strong": "var(--color-neutral-400)"
 	}
 }
