@@ -14,14 +14,6 @@
 		--stack-space: var(--space-m-l);
 	}
 
-	.copy > :where(figure, figure + *, hr, hr + *) {
-		--stack-space-override: var(--space-l-xl);
-	}
-
-	.copy > :where(aside, aside + *) {
-		--stack-space-override: var(--space-l);
-	}
-
 	.copy > :where(h2, .h2) {
 		--stack-space-override: var(--copy-margin-start-h2);
 	}
@@ -44,6 +36,14 @@
 
 	.copy > :where(h4 + *, .h4 + *) {
 		--stack-space-override: var(--copy-margin-end-h4);
+	}
+
+	.copy > :where(figure, figure + *, hr, hr + *, .post-body p:has(img), .post-body p:has(img) + *) {
+		--stack-space-override: var(--space-l-xl);
+	}
+
+	.copy > :where(aside, aside + *) {
+		--stack-space-override: var(--space-l);
 	}
 
 	.copy > ul:not([class]) > li + li,
