@@ -12,10 +12,42 @@ const colors = {
 };
 const customUtilities = require('./src/design-tokens/custom-utilities.json');
 
-function tokens(tokens, prefix = '') {
-	return Object
-		.keys(tokens)
-		.reduce((a, v) => ({ ...a, [v]: `var(--${[prefix, v].filter(x => x.length).join('-')})` }), {});
+function getTokens(tokens, prefix = '') {
+	const flatten = (obj) => {
+		const result = {};
+
+		Object.keys(obj).forEach((key) => {
+			if (typeof obj[key] === 'object') {
+				const _obj = flatten(obj[key]);
+				Object.keys(_obj).forEach((_key) => {
+					result[`${key}.${_key}`] = _obj[_key];
+				});
+			} else {
+				result[key] = obj[key];
+			}
+		});
+
+		return result;
+	};
+
+	const makeCSSVariable = (str) => {
+		const variable = [prefix, ...str.split('.')]
+			.filter(x => x.length && x !== 'DEFAULT')
+			.join('-');
+		return `var(--${variable})`;
+	};
+
+	const _tokens = JSON.parse(JSON.stringify(tokens));
+	const flatTokens = flatten(_tokens);
+
+	Object.keys(flatTokens).forEach((token) => {
+		token.split('.').reduce((o, i) => {
+			if (typeof o[i] === 'object') return o[i];
+			o[i] = makeCSSVariable(token);
+		}, _tokens);
+	});
+
+	return _tokens;
 }
 
 module.exports = {
@@ -35,22 +67,11 @@ module.exports = {
 			xl: '78rem',
 			'2xl': '94rem'
 		},
-		colors: Object.fromEntries(
-			Object.entries(colors.semanticPalette)
-				.map(([color, steps]) => [
-					color,
-					Object.fromEntries(
-						Object.entries(steps).map(([step]) => [
-							step,
-							`var(--color-${color}-${step})`
-						])
-					)
-				])
-		),
-		fontSize: tokens(fontSize, 'text'),
-		lineHeight: tokens(lineHeight, 'leading'),
+		colors: getTokens(colors.semanticPalette, 'color'),
+		fontSize: getTokens(fontSize, 'text'),
+		lineHeight: getTokens(lineHeight, 'leading'),
 		spacing: {
-			...tokens(spacing, 'space'),
+			...getTokens(spacing, 'space'),
 			...customUtilities.spacing
 		},
 		margin: ({ theme }) => ({
@@ -59,23 +80,23 @@ module.exports = {
 		}),
 		padding: ({ theme }) => theme('spacing'),
 		extend: {
-			backgroundColor: tokens(colors.system.background, 'color-background'),
+			backgroundColor: getTokens(colors.system.background, 'color-background'),
 			colors: ({ colors }) => ({
 				current: colors.current,
 				inherit: colors.inherit
 			}),
-			textColor: tokens(colors.system.text, 'color-text'),
+			textColor: getTokens(colors.system.text, 'color-text'),
 			maxWidth: {
 				copy: 'var(--copy-width)',
-				...tokens(spacing, 'space')
+				...getTokens(spacing, 'space')
 			},
 			minWidth: {
 				copy: 'var(--copy-width)',
-				...tokens(spacing, 'space')
+				...getTokens(spacing, 'space')
 			},
 			width: {
 				copy: 'var(--copy-width)',
-				...tokens(spacing, 'space')
+				...getTokens(spacing, 'space')
 			}
 		},
 		variables: {
