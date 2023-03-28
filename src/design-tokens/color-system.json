@@ -18,8 +18,8 @@
 		"ring": "var(--color-accent-600)"
 	},
 	"link": {
-		"DEFAULT": "var(--palette-blue-700)",
-		"hover": "var(--palette-blue-900)"
+		"DEFAULT": "#1d4ed8",
+		"hover": "#1e3a8a"
 	},
 	"separator": {
 		"DEFAULT": "var(--color-neutral-300)",

@@ -22,8 +22,10 @@
 		-webkit-touch-callout: none;
 	}
 
-	header:hover + :global(*) {
-		background-color: var(--color-background-surface-3);
+	@media (hover: hover) {
+		header:hover + :global(*) {
+			background-color: var(--color-background-surface-3);
+		}
 	}
 
 	header:focus-within + :global(*) {

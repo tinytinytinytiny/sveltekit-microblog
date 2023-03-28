@@ -6,7 +6,6 @@ const spacing = require('./src/design-tokens/spacing.cjs');
 const lineHeight = require('./src/design-tokens/line-height.json');
 const colors = {
 	palette: require('./src/design-tokens/color-palette.json'),
-	semanticPalette: require('./src/design-tokens/color-semantic-palette.json'),
 	system: require('./src/design-tokens/color-system.json'),
 	components: require('./src/design-tokens/color-components.json')
 };
@@ -67,7 +66,7 @@ module.exports = {
 			xl: '78rem',
 			'2xl': '94rem'
 		},
-		colors: getTokens(colors.semanticPalette, 'color'),
+		colors: getTokens(colors.palette, 'color'),
 		fontSize: getTokens(fontSize, 'text'),
 		lineHeight: getTokens(lineHeight, 'leading'),
 		spacing: {
@@ -103,9 +102,8 @@ module.exports = {
 			DEFAULT: {
 				space: spacing,
 				text: fontSize,
-				palette: colors.palette,
 				color: {
-					...colors.semanticPalette,
+					...colors.palette,
 					...colors.system
 				},
 				leading: lineHeight,

@@ -33,21 +33,21 @@
 
 	h1,
 	.h1 {
-		font-size: var(--text-step-6);
+		font-size: var(--text-step-4);
 		font-weight: 900;
-		line-height: var(--leading-xxs);
+		line-height: var(--leading-xs);
 	}
 
 	h2,
 	.h2 {
-		font-size: var(--text-step-4);
-		line-height: var(--leading-xs);
+		font-size: var(--text-step-3);
+		line-height: var(--leading-s);
 	}
 
 	h3,
 	.h3 {
 		font-size: var(--text-step-2);
-		line-height: var(--leading-s);
+		line-height: var(--leading-m);
 	}
 
 	h4,

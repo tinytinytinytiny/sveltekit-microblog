@@ -14,7 +14,7 @@
 		color: var(--color-text-normal);
 		font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
 		font-size: var(--text-step-1);
-		line-height: var(--leading-m);
+		line-height: var(--leading-l);
 	}
 
 	.layout {
