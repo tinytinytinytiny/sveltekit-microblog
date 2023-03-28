@@ -10,8 +10,8 @@
 	"text": {
 		"weakest": "var(--color-neutral-500)",
 		"weak": "var(--color-neutral-600)",
-		"normal": "#050810",
-		"strong": "#050810"
+		"normal": "var(--color-neutral-950)",
+		"strong": "var(--color-neutral-950)"
 	},
 	"focus": {
 		"background": "var(--color-accent-100)",
