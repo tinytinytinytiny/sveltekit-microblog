@@ -7,6 +7,7 @@
 
 	export let id;
 	export let reply = true;
+	export let size = 0;
 
 	let replying = false;
 </script>
@@ -22,7 +23,7 @@
 			<input type="hidden" name="parent-id" value={id} />
 		</InputForm>
 	{:else}
-		<div class="cluster text-step-0">
+		<div class="cluster" class:text-step-0="{size == 0}">
 			{#if reply}
 				<form action={`/posts/${id}`} on:submit|preventDefault={() => (replying = !replying)}>
 					<Button type="submit">Reply</Button>

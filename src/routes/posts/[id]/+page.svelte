@@ -6,4 +6,4 @@
 </script>
 
 <PostBody content={data.text} />
-<PostControls id={data.id} reply={false} />
+<PostControls id={data.id} reply={false} size="1" />
